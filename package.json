@@ -1,0 +1,21 @@
+{
+  "name": "hatey-bazarey",
+  "version": "1.0.0",
+  "description": "E-commerce application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node Backend/server.js",
+    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon Backend/server",
+    "prod": "SET NODE_ENV=PRODUCTION& nodemon Backend/server"
+  },
+  "author": "Anupam Debnath",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
