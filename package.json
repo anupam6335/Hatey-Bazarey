@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node Backend/server.js",
     "dev": "SET NODE_ENV=DEVELOPMENT& nodemon Backend/server",
-    "prod": "SET NODE_ENV=PRODUCTION& nodemon Backend/server"
+    "prod": "SET NODE_ENV=PRODUCTION& nodemon Backend/server",
+    "seeder": "node Backend/utils/seeder.js"
   },
   "author": "Anupam Debnath",
   "license": "MIT",
