@@ -23,22 +23,22 @@
   --fw7: 700;
   --fw8: 800;
 
-  --trans-background-color: background-color .3s, color .3s;
-  --trans-background: background-color .3s;
-  --trans-color: color .3s;
-
+  --trans-background-color: background-color 0.3s, color 0.3s;
+  --trans-background: background-color 0.3s;
+  --trans-color: color 0.3s;
 }
 * {
   margin: 0;
   padding: 0;
-
 }
-*,::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
@@ -61,11 +61,9 @@ img {
   vertical-align: middle;
 }
 
-
 strong {
   font-weight: var(--fw8);
 }
-
 
 table {
   border-collapse: collapse;
@@ -76,9 +74,13 @@ input::placeholder {
   font: inherit;
 }
 
-
-h1,h2,h3,h4,h5,h6{
-  font-family: 'Popins';
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Popins";
 }
 
 h1 {
@@ -99,55 +101,4 @@ h3 {
 h4 {
   font-size: 1em;
   font-weight: var(--fw6);
-}
-
-/* 
-  Resusable Selector
-*/
-
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 0.938em;
-}
-
-.column {
-  margin-left: -0.938em;
-  margin-right: -0.938em;
-}
-
-.column .row {
-  padding: 0 0 .938em;
-}
-
-.flexwrap {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.flexcenter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flexitem {
-  display: flex;
-  align-items: center;
-}
-
-.flexcol {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
-
-
-
-/* Responsive */
-
-@media screen and (max-width: 992px) {
-  .container {
-    padding: 0 2em;
-  }
 }
