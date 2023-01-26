@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+.image__grid {
+    --gap: 16px;
+    --num-col: 4;
+    --row-height: 280px;
+
+    box-sizing: border-box;
+    padding: var(--gap);
+
+    display: grid;
+    grid-template-columns: repeat(var(--num-col), 1fr);
+    grid-auto-rows: var(--row-height);
+    gap: var(--gap);
+}
+
+
+.image__grid > div > img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    border-radius: 20px;
+    z-index: -10;
+}
+
+.image__grid_col__2 {
+    grid-column: span 2;
+}
+.image__grid_row__2 {
+    grid-row: span 2;
+}
+.box,.boxs {
+    position: relative;
+}
+
+.box > h3 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: rgb(72, 68, 68);
+    font-family: 'Shadows Into Light', cursive;
+}
+.boxs > h3 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(72, 68, 68);
+    font-family: 'Shadows Into Light', cursive;
+}
+.box > h3 > p {
+    font-size: 15rem;
+    margin-left: 29rem;
+    margin-top: -10rem;
+}
+.box > p {
+    position: absolute;
+    top: 15rem;
+    left: 1rem;
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: rgb(72, 68, 68);
+}
+
+.boxs > p {
+    position: absolute;
+    top: 7rem;
+    left: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: rgb(72, 68, 68);
+}
+.box > .cardIcon {
+    position: absolute;
+    top: 32rem;
+    left: 42rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(51, 50, 50);
+    cursor: pointer;
+}
+.boxs > .cardIcons {
+    position: absolute;
+    top: 15rem;
+    left: 20rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(51, 50, 50);
+    cursor: pointer;
+}
+.box > .cardIcon:hover,
+.boxs > .cardIcons:hover {
+    color: #000;
+}
+
+ .boxs > .boys {
+    left: 13.5rem;
+    
+}
+
+.boxs > .phone {
+    color: rgb(54, 53, 53);
+    left: 5rem;
+    top: -.85rem;
+}
+@media screen and (max-width: 1024px) {
+    .image__grid {
+        --num-col: 2;
+        --row-height: 200px
+    }
+}
+  
