@@ -1,104 +1,116 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&family=Rubik:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic);
-
-::root {
-  --primary-color: #ff6b6b;
-  --secondary-color: #794afa;
-  --secondary-dark-color: #794afa;
-
-  --white-color: #fff;
-  --light-bg-color: #f2f3f5;
-  --light-text-color: #7c899a;
-  --border-color: #e5e8ec;
-  --dark-color: #0a021c;
-
-  --font-small: 13px;
-  --font-smaller: 11px;
-
-  --parcent100: 100%;
-  --parcent50: 50%;
-
-  --fw3: 300;
-  --fw5: 500;
-  --fw6: 600;
-  --fw7: 700;
-  --fw8: 800;
-
-  --trans-background-color: background-color 0.3s, color 0.3s;
-  --trans-background: background-color 0.3s;
-  --trans-color: color 0.3s;
-}
+@import url("https://fonts.googleapis.com/css2?family=Passions+Conflict&display=swap");
 * {
-  margin: 0;
   padding: 0;
-}
-*,
-::before,
-::after {
+  margin: 0;
   box-sizing: border-box;
 }
-
 body {
-  font-family: "Rubik", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.4;
-  color: var(--dark-color);
-  background-color: var(--white-color);
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f9f9;
+  color: #000;
 }
-
-a {
-  text-decoration: none;
-  color: inherit;
-  -webkit-tap-highlight-color: transparent;
-}
-
-ul {
-  list-style: none;
-}
-
-img {
-  max-width: var(--parcent100);
-  vertical-align: middle;
-}
-
-strong {
-  font-weight: var(--fw8);
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-input::placeholder {
-  font: inherit;
-}
-
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Popins";
-}
-
-h1 {
-  font-size: calc(1.3em + 1vw);
-  font-weight: var(--fw8);
-  line-height: 1;
-}
-
 h2 {
-  font-size: 2.5em;
+  font-weight: 600;
 }
-
 h3 {
-  font-size: 1.2em;
-  font-weight: var(--fw7);
+  font-weight: 500;
 }
-
-h4 {
-  font-size: 1em;
-  font-weight: var(--fw6);
+button,
+input {
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+::placeholder {
+  font-size: 17px;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p {
+  color: #5a5a5a;
+  font-size: 15px;
+}
+label {
+  color: #999;
+  font-size: 13px;
+}
+form,
+.boxItems {
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fff;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  margin-top: 80px;
+  padding: 40px;
+}
+form span {
+  margin-bottom: 20px;
+}
+.accountInfo .right input,
+form input {
+  border: 1px solid #212121;
+  border-radius: 6px;
+  color: #212121;
+  font-size: 15px;
+  min-height: 44px;
+  padding: 0 20px;
+  transition: border-color 0.2s ease;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.button {
+  background: #212121;
+  border: 1px solid;
+  border-color: #212121;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 400;
+  height: 48px;
+  line-height: 1;
+  padding: 15px 28px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+}
+.container {
+  max-width: 95%;
+  margin: auto;
+}
+footer {
+  margin-top: 50px;
+  padding: 10px;
+}
+footer .icon {
+  font-size: 20px;
+  margin-left: 10px;
+}
+@media screen and (max-width: 768px) {
+  .grid3,
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
