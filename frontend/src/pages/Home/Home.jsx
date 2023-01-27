@@ -1,11 +1,12 @@
 import { BiShoppingBag } from "react-icons/bi";
 import "./Home.css";
+import { Featureproduct } from "../../components/allComponents";
 const Home = () => {
   return (
     <>
       <section className="image__grid">
         <div className="image__grid_col__2 image__grid_row__2 box">
-          <h3>
+          <h3 className="bose__text">
             Bose QuietComfort <p>45</p>{" "}
           </h3>
           <p>
@@ -48,6 +49,7 @@ const Home = () => {
           />
         </div>
       </section>
+      <Featureproduct/>
     </>
   );
 };

@@ -111,5 +111,27 @@
         --num-col: 2;
         --row-height: 200px
     }
+
+    .box > h3 { 
+        font-size: 2.5rem;
+    }
+    .box > h3 > p {
+        font-size: 11rem;
+        margin-left: 16rem;
+        margin-top: -5rem;
+    }
+    .box > .cardIcon {
+        top: 22rem;
+        left: 26rem;
+        font-size: 2rem;
+    }
+    .box > p {
+        position: absolute;
+        top: 12rem;
+        left: 1rem;
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: rgb(72, 68, 68);
+    }
 }
   
