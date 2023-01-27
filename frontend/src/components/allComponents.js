@@ -5,3 +5,4 @@ export {default as User} from './layout/User/User';
 export {default as CartItems} from './layout/CartItems/CartItems';
 export {default as Featureproduct} from './layout/Featureproduct/Featureproduct';
 export {default as Product} from './layout/Featureproduct/Product';
+export {default as MetaData} from './layout/MetaData';

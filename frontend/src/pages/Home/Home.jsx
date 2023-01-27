@@ -1,9 +1,11 @@
 import { BiShoppingBag } from "react-icons/bi";
 import "./Home.css";
 import { Featureproduct } from "../../components/allComponents";
+import {MetaData} from '../../components/allComponents';
 const Home = () => {
   return (
     <>
+    <MetaData title={`Buy best products online`}/>
       <section className="image__grid">
         <div className="image__grid_col__2 image__grid_row__2 box">
           <h3 className="bose__text">

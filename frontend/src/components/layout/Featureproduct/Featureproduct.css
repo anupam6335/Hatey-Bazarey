@@ -79,7 +79,7 @@ h6 {
   --gap: 40px;
   --num-col: 4;
   --row-height: 500px;
-  margin-left: 25px;
+  margin-left: -20px;
   box-sizing: border-box;
 
   display: grid;
