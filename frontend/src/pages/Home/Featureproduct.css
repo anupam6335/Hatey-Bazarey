@@ -140,6 +140,46 @@ h6 {
   border-radius: 3px;
 }
 
+
+
+/* Ratings */
+.des .ratings {
+  font-size: 1.2rem;
+  color: #fdcc0d;
+}
+
+#no_of_reviews {
+  font-size: 0.85rem;
+  color: grey;
+  margin-left: 0.5rem;
+}
+
+.rating-outer {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+  color: #fdcc0d;
+}
+
+.rating-outer::before {
+  content: '\f006 \f006 \f006 \f006 \f006';
+}
+
+.rating-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.rating-inner::before {
+  content: '\f005 \f005 \f005 \f005 \f005';
+  color: #f8ce0b;
+}
+
+
 @media screen and (max-width: 1024px) {
   #feature  {
     --gap: 10px;
@@ -150,5 +190,6 @@ h6 {
   #product1 .pro__container {
     --gap: 10px;
     --num-col: 1;
+    margin-left: .9rem;
   }
 }

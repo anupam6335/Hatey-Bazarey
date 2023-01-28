@@ -1,12 +1,25 @@
 import { BiShoppingBag } from "react-icons/bi";
 import "./Home.css";
-import { Featureproduct } from "../../components/allComponents";
-import {MetaData} from '../../components/allComponents';
+import "./Featureproduct.css";
+import { MetaData, Product } from "../../components/allComponents";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../../actions/productActions";
+import { useEffect } from "react";
+import { product } from "../../components/allComponents";
+
 const Home = () => {
+  const dispatch = useDispatch();
+  const { loading, products, error, productsCount } = useSelector(
+    (state) => state.products
+  );
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
+
   return (
     <>
-    <MetaData title={`Buy best products online`}/>
-      <section className="image__grid">
+      <MetaData title={`Buy best products online`} />
+      {loading ? <h1>Loading...</h1> : (<> <section className="image__grid">
         <div className="image__grid_col__2 image__grid_row__2 box">
           <h3 className="bose__text">
             Bose QuietComfort <p>45</p>{" "}
@@ -34,7 +47,7 @@ const Home = () => {
             alt=" main banner"
           />
         </div>
-       
+
         <div className="boxs">
           <img
             src="https://res.cloudinary.com/hateybazarey/image/upload/v1674746870/products/phone_nehycw.jpg"
@@ -43,15 +56,60 @@ const Home = () => {
         </div>
         <div className="boxs">
           {/* <h3 className="phone">HB watchs</h3> */}
-          <p>
-          </p>
+          <p></p>
           <img
             src="https://res.cloudinary.com/hateybazarey/image/upload/v1674747888/products/watch_ujcdpg.webp"
             alt=" main banner"
           />
         </div>
       </section>
-      <Featureproduct/>
+      {/* <Featureproduct/> */}
+      <div id="feature" className="section__p1">
+        <div className="fe__box">
+          <img src="/assets/features/f1.png" alt="" />
+          <h6>Free Shipping</h6>
+        </div>
+
+        <div className="fe__box">
+          <img src="/assets/features/f2.png" alt="" />
+          <h6>Online Order</h6>
+        </div>
+
+        <div className="fe__box">
+          <img src="/assets/features/f3.png" alt="" />
+          <h6>Save Money</h6>
+        </div>
+
+        <div className="fe__box">
+          <img src="/assets/features/f4.png" alt="" />
+          <h6>Promotions</h6>
+        </div>
+
+        <div className="fe__box">
+          <img src="/assets/features/f5.png" alt="" />
+          <h6>Happy Sell</h6>
+        </div>
+
+        <div className="fe__box">
+          <img src="/assets/features/f6.png" alt="" />
+          <h6>F24/7 Support</h6>
+        </div>
+      </div>
+
+      <div id="product1" className="section__p1">
+        <h2>Featured Products</h2>
+        <p>Summer Collection New Modern Design</p>
+        <div to="/products" className="view__product">
+          <div className="pro__container">
+            {products &&
+              products.map((product) => (
+                <Product key={product._id} product={product}/>
+              ))}
+          </div>
+        </div>
+        ;
+      </div></>)}
+     
     </>
   );
 };

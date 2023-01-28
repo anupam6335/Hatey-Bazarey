@@ -27,8 +27,9 @@ const Card = () => {
             <AiOutlineClose className="icon" />
           </button>
         </div>
-        {product.slice(0,2).map((item) => (
+        {product.slice(0,2).map((item, idx) => (
           <CartItems 
+          key={idx}
             id={item?.id}
             cover={item?.cover}
             name={item?.name}

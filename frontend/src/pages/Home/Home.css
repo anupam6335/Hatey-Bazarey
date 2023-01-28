@@ -106,6 +106,9 @@
     left: 5rem;
     top: -.85rem;
 }
+
+
+
 @media screen and (max-width: 1024px) {
     .image__grid {
         --num-col: 2;
