@@ -6,3 +6,4 @@ export { default as CartItems } from "./layout/CartItems/CartItems";
 export { default as MetaData } from "./layout/MetaData";
 export { default as Product } from "./Product/Product";
 export { default as Loader } from "./layout/Loader/Loader";
+export { default as Productdetails } from "./Productdetails/Productdetails";

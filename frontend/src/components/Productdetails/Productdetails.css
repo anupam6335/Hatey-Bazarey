@@ -1,0 +1,145 @@
+.section__p1 {
+  padding: 40px 80px;
+}
+#prodetails {
+  display: flex;
+  margin-top: 20px;
+}
+#prodetails .single__pro_image {
+  width: 100%;
+  height: 100%;
+  margin-right: 50px;
+  /* margin-top: 5rem; */
+}
+
+.small__img_group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.small__img_col {
+  flex-basis: 24%;
+  cursor: pointer;
+}
+
+#prodetails .single__pro_details {
+  width: 50%;
+  padding-top: 30px;
+}
+
+#prodetails .single__pro_details h4 {
+  padding: 20px 0 20px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+#prodetails .single__pro_details h2 {
+  font-size: 26px;
+}
+
+#prodetails .single__pro_details select {
+  display: flex;
+  padding: 5px 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+#prodetails .single__pro_details input {
+  text-align: center;
+  font-weight: bold;
+  width: 50px;
+  height: 47px;
+  padding-left: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+  border: 1px solid #444644;
+  border-radius: 10px;
+}
+
+#prodetails .single__pro_details span {
+  line-height: 25px;
+}
+
+.ratings {
+  cursor: pointer;
+}
+
+.review_box {
+  margin-top: 20px;
+  margin-left: -1rem;
+}
+
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 400px;
+  min-height: 50px;
+  margin-left: 25px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.rating label {
+  display: flex;
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+}
+.rating label:after {
+  font-family: 'FontAwesome';
+  transition: all 0.4s ease-out;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  content: "\f006";
+  color: rgb(59, 58, 58);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 30px;
+  line-height: 1;
+}
+.rating label:hover:after {
+  color: rgb(212, 255, 21);
+}
+.rating input {
+  display: none;
+}
+.rating input:checked + label:after,
+.rating input:checked ~ label:after {
+  content: "\f005";
+  color: rgb(237, 237, 18);
+  text-shadow: 0 0 20px #F9BF3B;
+  text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.6);
+}
+
+
+.submit__review {
+  background: #40ef40;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.textArea {
+  margin-top: -2rem;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+textarea:focus {
+  border: none;
+}
+
+.greenColor {
+  color: green;
+}
+
+.redColor  {
+  color: red;
+}
+
+.disableBtn {
+  background: #ce1010;
+  color: rgb(230, 190, 190);
+  padding: 1rem;
+  cursor: none;
+  border-radius: 20px;
+}

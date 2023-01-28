@@ -8,6 +8,21 @@
       {
         "public_id": "products/f1_oimjmn",
         "url": "https://res.cloudinary.com/hateybazarey/image/upload/v1674859605/products/f1_oimjmn.jpg"
+      },
+      {
+        "public_id": "products/s3_qwk4b4",
+        "url":"https://res.cloudinary.com/hateybazarey/image/upload/v1674912617/products/s3_qwk4b4.jpg"
+      },
+      {
+        "public_id": "products/s4_pnwgvf",
+        "url":"https://res.cloudinary.com/hateybazarey/image/upload/v1674912845/products/s4_pnwgvf.png"
+      },
+      {
+        "public_id": "products/s1_o6hzyd",
+        "url":"https://res.cloudinary.com/hateybazarey/image/upload/v1674912616/products/s1_o6hzyd.jpg"
+      },{
+        "public_id": "products/s2_byjxpa",
+        "url": "https://res.cloudinary.com/hateybazarey/image/upload/v1674912615/products/s2_byjxpa.webp"
       }
     ],
     "category": "Clothes/Shoes",
