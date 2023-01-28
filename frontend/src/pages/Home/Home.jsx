@@ -5,16 +5,20 @@ import { Loader, MetaData, Product } from "../../components/allComponents";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../actions/productActions";
 import { useEffect } from "react";
-import { product } from "../../components/allComponents";
+import { toast } from "react-hot-toast";
 
 const Home = () => {
   const dispatch = useDispatch();
   const { loading, products, error, productsCount } = useSelector(
     (state) => state.products
   );
+  
   useEffect(() => {
+    if(error) {
+      return toast.error(error)
+    }
     dispatch(getProducts());
-  }, [dispatch]);
+  }, [dispatch, error]);
 
   return (
     <>
