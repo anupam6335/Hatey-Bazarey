@@ -1,7 +1,7 @@
 import { BiShoppingBag } from "react-icons/bi";
 import "./Home.css";
 import "./Featureproduct.css";
-import { MetaData, Product } from "../../components/allComponents";
+import { Loader, MetaData, Product } from "../../components/allComponents";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../actions/productActions";
 import { useEffect } from "react";
@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <>
       <MetaData title={`Buy best products online`} />
-      {loading ? <h1>Loading...</h1> : (<> <section className="image__grid">
+      {loading ? <Loader/> : (<> <section className="image__grid">
         <div className="image__grid_col__2 image__grid_row__2 box">
           <h3 className="bose__text">
             Bose QuietComfort <p>45</p>{" "}
