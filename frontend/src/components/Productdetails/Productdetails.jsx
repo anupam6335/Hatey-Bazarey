@@ -116,7 +116,7 @@ const Productdetails = ({ match }) => {
             <div style={{ marginTop: "1rem" }}>
               <p>Submit Your Review</p>
               <div className="review_box">
-                <div class="rating">
+                <div className="rating">
                   <input type="radio" name="rating" id="r-1" />
                   <label for="r-1"></label>
 

@@ -1,16 +1,35 @@
 header {
   background: #fff;
-  padding: 20px;
+  padding: 5px;
   box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
   position: relative;
   z-index: 44;
 }
+.input-group {
+  border-radius: 120px;
+  height: 10px;
+}
+#search_btn {
+  margin-top: -3px;
+  align-items: center;
+  background: #424242;
+  height: 0px;
+}
+#search_btn:focus ,
+#search_btn:active{
+  outline: none;
+}
+#search_btn:hover {
+  color: #fff;
+  background: #2d2d2d;
+}
+
 .search {
-  border: 2px solid rgba(37, 32, 32, 0.868);
   border-radius: 6px;
   font-size: 15px;
-  padding: 0 20px;
+  padding: 0px;
   width: 600px;
+  margin-top: 12px;
 }
 .searchIcon {
   font-size: 22px;

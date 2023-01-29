@@ -1,7 +1,7 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai"
-import { Card, User, Loader } from "../../allComponents";
+import { Card, User, Loader, Search } from "../../allComponents";
 import { useSelector } from "react-redux";
 
 
@@ -25,10 +25,7 @@ const Header = () => {
           <img src='/assets/HB-black.png' alt='Hatey bazarey' style={{height: '70px', width: '140px'}}/>
         </Link>
       </div>
-      <div className='search flex'>
-        <AiOutlineSearch className='searchIcon' />
-        <input type='text' placeholder='Search...' />
-      </div>
+      <Search/>
       <div className='account flexCenter'>
         <Card/>
         <User/>

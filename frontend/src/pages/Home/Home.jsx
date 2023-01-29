@@ -1,4 +1,9 @@
-import { Banner, Loader, MetaData, Product } from "../../components/allComponents";
+import {
+  Banner,
+  Loader,
+  MetaData,
+  Product,
+} from "../../components/allComponents";
 import { getProducts } from "../../actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
 import { BiShoppingBag } from "react-icons/bi";
@@ -7,7 +12,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import "./Featureproduct.css";
 import "./Home.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -15,13 +20,14 @@ const Home = () => {
   const { loading, products, error, productsCount, resPerPage } = useSelector(
     (state) => state.products
   );
-
+  const params = useParams();
+  const keyword = params.keyword;
   useEffect(() => {
     if (error) {
       return toast.error(error);
     }
-    dispatch(getProducts(currentPage));
-  }, [dispatch, error, currentPage]);
+    dispatch(getProducts(keyword, currentPage));
+  }, [dispatch, error, keyword, currentPage]);
 
   function setCurrentPageNo(pageNumber) {
     setCurrentPage(pageNumber);
@@ -36,11 +42,15 @@ const Home = () => {
         <Loader />
       ) : (
         <>
-        {currentPage === 1 && ( <Banner/>)}
+          {currentPage === 1 && !keyword && <Banner />}
 
           <div id="product1" className="section__p1">
-            <h2>Trending Products</h2>
-            <p>{currentPage ===  3 && 'Fresh Fruits' } {currentPage === 1 && 'Summer Collection New Modern Design'} {currentPage === 2 && 'Our Electronics Product'}</p>
+            <h2>{keyword ? `${keyword.toLocaleUpperCase()}`: 'Trending Products'}</h2>
+            <p>
+              {!keyword && currentPage === 3 && "Fresh Fruits"}
+              {!keyword && currentPage === 1 && "Summer Collection New Modern Design"}
+              {!keyword && currentPage === 2 && "Our Electronics Product"}
+            </p>
             <div to="/products" className="view__product">
               <div className="pro__container">
                 {products &&
