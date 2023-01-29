@@ -8,6 +8,7 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #f9f9f9;
   color: #000;
+  overflow-x: hidden;
 }
 h1,
 h2 {

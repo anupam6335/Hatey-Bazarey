@@ -178,8 +178,29 @@ h6 {
   content: '\f005 \f005 \f005 \f005 \f005';
   color: #f8ce0b;
 }
-
-
+.search__component {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.view__product_search {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.view__product_1 {
+  margin-left: -8rem;
+}
+.title_for_trending_and_search {
+  position: absolute;
+  left: -.5rem;
+  top: 1rem;
+ 
+}
+.catergory_box {
+  margin-left: -20px;
+  margin-right: 15px;
+}
 @media screen and (max-width: 1024px) {
   #feature  {
     --gap: 10px;

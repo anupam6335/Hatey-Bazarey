@@ -17,7 +17,7 @@ const Productdetails = ({ match }) => {
   );
   const matchId = useParams();
   useEffect(() => {
-    console.log(matchId);
+    // console.log(matchId);
     dispatch(getProductDetails(matchId.id));
     if (error) {
       toast.error(error);
@@ -33,8 +33,9 @@ const Productdetails = ({ match }) => {
         <div id="prodetails" className="section__p1">
           <div className="single__pro_image">
             {product.images &&
-              product.images.map((image) => (
+              product.images.map((image, idx) => (
                 <img
+                key={idx}
                   className="d-block w-100"
                   src={image.url}
                   alt={product.title}
@@ -118,19 +119,19 @@ const Productdetails = ({ match }) => {
               <div className="review_box">
                 <div className="rating">
                   <input type="radio" name="rating" id="r-1" />
-                  <label for="r-1"></label>
+                  <label htmlFor="r-1"></label>
 
                   <input type="radio" name="rating" id="r-2" />
-                  <label for="r-2"></label>
+                  <label htmlFor="r-2"></label>
 
                   <input type="radio" name="rating" id="r-3" />
-                  <label for="r-3"></label>
+                  <label htmlFor="r-3"></label>
 
                   <input type="radio" name="rating" id="r-4" />
-                  <label for="r-4"></label>
+                  <label htmlFor="r-4"></label>
 
                   <input type="radio" name="rating" id="r-5" />
-                  <label for="r-5"></label>
+                  <label htmlFor="r-5"></label>
                 </div>
                 <textarea
                   name=""
