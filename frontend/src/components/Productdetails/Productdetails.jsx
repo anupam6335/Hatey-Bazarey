@@ -26,7 +26,7 @@ const Productdetails = ({ match }) => {
 
   return (
     <>
-      <MetaData title={`shirts`} />
+      <MetaData title={`${product.name}`} />
       {loading ? (
         <Loader />
       ) : (
@@ -93,12 +93,12 @@ const Productdetails = ({ match }) => {
             </div>
 
             <h2>${product.price}</h2>
-            <select>
+            {/* <select>
               <option>Select Size</option>
               <option>XL</option>
               <option>XXL</option>
               <option>Small</option>
-            </select>
+            </select> */}
 
             <input type="number" max="10" min="1" placeholder="1" />
 

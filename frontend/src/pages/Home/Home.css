@@ -54,7 +54,7 @@
 .box > h3 > p {
     font-size: 15rem;
     margin-left: 29rem;
-    margin-top: -10rem;
+    margin-top: -8.89rem;
 }
 .box > p {
     position: absolute;
@@ -138,3 +138,23 @@
     }
 }
   
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  } 
+
+  .view__product_bose {
+    text-decoration: none;
+    margin-top: -2rem;
+
+    position: absolute;
+    top: 32rem;
+    left: 42rem;
+    color: rgb(51, 50, 50);
+  }
+  .view__product_bose:hover {
+    color: rgb(51, 50, 50);
+  }
