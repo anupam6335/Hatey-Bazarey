@@ -22,6 +22,7 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [price, setPrice] = useState([1, 1000]);
   const [category, setCategory] = useState("");
+  const [rating, setRating] = useState(0);
 
   const categories = [
     "Electronics",
@@ -39,30 +40,26 @@ const Home = () => {
   ];
 
   const dispatch = useDispatch();
-  const {
-    loading,
-    products,
-    error,
-    productsCount,
-    resPerPage,
-  } = useSelector((state) => state.products);
+  const { loading, products, error, productsCount, resPerPage } = useSelector(
+    (state) => state.products
+  );
   const params = useParams();
   const keyword = params.keyword;
   useEffect(() => {
     if (error) {
       return toast.error(error);
     }
-    dispatch(getProducts(keyword, currentPage, price, category));
-  }, [dispatch, error, keyword, currentPage, price, category]);
+    dispatch(getProducts(keyword, currentPage, price, category, rating));
+  }, [dispatch, error, keyword, currentPage, price, category, rating]);
 
   function setCurrentPageNo(pageNumber) {
     setCurrentPage(pageNumber);
   }
 
   let count = productsCount;
-  if(keyword) {
-    let proLen  = products.length;
-    if(proLen <= 8) {
+  if (keyword) {
+    let proLen = products.length;
+    if (proLen <= 8) {
       count = 0;
     }
   }
@@ -78,7 +75,7 @@ const Home = () => {
           {keyword ? (
             <div className="search__component">
               <div className="col-6 col-md-3 mt-5 mb-5">
-                <div className="px-5">
+                <div className="px-5 ">
                   {/* <Range
                     marks={{
                       1: `$1`,
@@ -95,7 +92,7 @@ const Home = () => {
                     value={price}
                     onChange={(price) => setPrice(price)}
                   /> */}
-                  <div className="mt-5 catergory_box">
+                  <div className="mt-5 catergory_box ">
                     <h4 className="mb-3">Categories</h4>
 
                     <ul className="pl-0">
@@ -112,6 +109,32 @@ const Home = () => {
                         </li>
                       ))}
                     </ul>
+
+                    <div className="">
+                      <h4 className="mb-3">Ratings</h4>
+
+                      <ul className="pl-0">
+                        {[5, 4, 3, 2, 1].map((star) => (
+                          <li
+                            style={{
+                              cursor: "pointer",
+                              listStyleType: "none",
+                            }}
+                            key={star}
+                            onClick={() => setRating(star)}
+                          >
+                            <div className="rating-outer">
+                              <div
+                                className="rating-inner"
+                                style={{
+                                  width: `${star * 20}%`,
+                                }}
+                              ></div>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>

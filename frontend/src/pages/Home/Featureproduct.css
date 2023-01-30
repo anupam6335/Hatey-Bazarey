@@ -141,7 +141,6 @@ h6 {
 }
 
 
-
 /* Ratings */
 .des .ratings {
   font-size: 1.2rem;
@@ -201,6 +200,7 @@ h6 {
   margin-left: -20px;
   margin-right: 15px;
 }
+
 @media screen and (max-width: 1024px) {
   #feature  {
     --gap: 10px;

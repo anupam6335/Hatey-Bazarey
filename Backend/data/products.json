@@ -1,39 +1,24 @@
 [
   {
     "name": "Cartoon Astronout T-Shirts",
-    "price": "5",
+    "price": "5.99",
     "description": "Cotton-Rich Material: This easy-to-maintain and breathable T-shirt in a cotton-rich blend is an ideal choice for warmer days.",
-    "ratings": 4.5,
+    "ratings": 4.7,
     "images": [
       {
         "public_id": "products/f1_oimjmn",
         "url": "https://res.cloudinary.com/hateybazarey/image/upload/v1674859605/products/f1_oimjmn.jpg"
-      },
-      {
-        "public_id": "products/s3_qwk4b4",
-        "url":"https://res.cloudinary.com/hateybazarey/image/upload/v1674912617/products/s3_qwk4b4.jpg"
-      },
-      {
-        "public_id": "products/s4_pnwgvf",
-        "url":"https://res.cloudinary.com/hateybazarey/image/upload/v1674912845/products/s4_pnwgvf.png"
-      },
-      {
-        "public_id": "products/s1_o6hzyd",
-        "url":"https://res.cloudinary.com/hateybazarey/image/upload/v1674912616/products/s1_o6hzyd.jpg"
-      },{
-        "public_id": "products/s2_byjxpa",
-        "url": "https://res.cloudinary.com/hateybazarey/image/upload/v1674912615/products/s2_byjxpa.webp"
       }
     ],
     "category": "Clothes/Shoes",
     "seller": "addias",
-    "stock": 50,
-    "numOfReviews": 32,
+    "stock": 1250,
+    "numOfReviews": 7312,
     "reviews": []
   },
   {
     "name": "Cartoon Astronout T-Shirts",
-    "price": "4.5",
+    "price": "4.59",
     "description": "Cotton-Rich Material: This easy-to-maintain and breathable T-shirt in a cotton-rich blend is an ideal choice for warmer days.",
     "ratings": 4.5,
     "images": [
@@ -44,13 +29,13 @@
     ],
     "category": "Clothes/Shoes",
     "seller": "addias",
-    "stock": 50,
-    "numOfReviews": 32,
+    "stock": 510,
+    "numOfReviews": 422,
     "reviews": []
   },
   {
     "name": "Cartoon Astronout T-Shirts",
-    "price": "5",
+    "price": "6.8",
     "description": "Cotton-Rich Material: This easy-to-maintain and breathable T-shirt in a cotton-rich blend is an ideal choice for warmer days.",
     "ratings": 3.5,
     "images": [
@@ -62,14 +47,14 @@
     "category": "Clothes/Shoes",
     "seller": "addias",
     "stock": 50,
-    "numOfReviews": 32,
+    "numOfReviews": 132,
     "reviews": []
   },
   {
     "name": "Cartoon Astronout T-Shirts",
-    "price": "5",
+    "price": "7",
     "description": "Cotton-Rich Material: This easy-to-maintain and breathable T-shirt in a cotton-rich blend is an ideal choice for warmer days.",
-    "ratings": 4.5,
+    "ratings": 2.5,
     "images": [
       {
         "public_id": "products/f6_xver4x",
@@ -84,9 +69,9 @@
   },
   {
     "name": "Cartoon Astronout T-Shirts",
-    "price": "5",
+    "price": "4.99",
     "description": "Cotton-Rich Material: This easy-to-maintain and breathable T-shirt in a cotton-rich blend is an ideal choice for warmer days.",
-    "ratings": 3.5,
+    "ratings": 1.5,
     "images": [
       {
         "public_id": "products/f7_jnr9vm",
@@ -96,7 +81,7 @@
     "category": "Clothes/Shoes",
     "seller": "addias",
     "stock": 50,
-    "numOfReviews": 32,
+    "numOfReviews": 22,
     "reviews": []
   },
   {
@@ -135,7 +120,7 @@
   },
   {
     "name": "Cartoon Astronout T-Shirts",
-    "price": "5",
+    "price": "5.39",
     "description": "Cotton-Rich Material: This easy-to-maintain and breathable T-shirt in a cotton-rich blend is an ideal choice for warmer days.",
     "ratings": 3.5,
     "images": [
@@ -147,7 +132,7 @@
     "category": "Clothes/Shoes",
     "seller": "addias",
     "stock": 50,
-    "numOfReviews": 32,
+    "numOfReviews": 112,
     "reviews": []
   },
   {
@@ -312,14 +297,6 @@
       {
         "public_id": "products/wmoa49q9e70ze9xtcra2_zrmub8",
         "url": "https://res.cloudinary.com/hateybazarey/image/upload/v1674117130/products/wmoa49q9e70ze9xtcra2_zrmub8.jpg"
-      },
-      {
-        "public_id": "products/i0k1wdwi5hrpmzwxvsds_qbmddb",
-        "url": "https://res.cloudinary.com/hateybazarey/image/upload/v1674117158/products/i0k1wdwi5hrpmzwxvsds_qbmddb.jpg"
-      },
-      {
-        "public_id": "products/bshmuo9qisfhz4azvnsd_nmzanm",
-        "url": "https://res.cloudinary.com/hateybazarey/image/upload/v1674117229/products/bshmuo9qisfhz4azvnsd_nmzanm.jpg"
       }
     ],
     "category": "Food",
