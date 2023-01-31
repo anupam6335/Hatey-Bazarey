@@ -6,16 +6,16 @@
   align-items: center;
   margin-top: 2rem;
 }
-
+.Register_BOX {
+  margin-top: -.5rem;
+}
 .video__Login {
   width: 50%;
   height: inherit;
 }
 
 .login {
-
   margin: 20px auto;
-  margin-top: 5rem;
   padding: 40px 50px;
   max-width: 600px;
   border-radius: 5px;
@@ -25,7 +25,9 @@
   border-top-right-radius: 20%;
   transition: all 3s ease;
 }
-
+.register {
+  padding: 10px 30px;
+}
 .login:hover {
   border-bottom-left-radius: 0%;
   border-bottom-right-radius: 20%;
@@ -44,6 +46,7 @@
   }
 
 .login input[type=text],
+.login input[type=email],
 .login input[type=password] {
   border: 1px solid #c0c0c0;
   transition: .2s;
@@ -76,6 +79,10 @@
   top:3px;
   box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px 3px #999;
 }
+.avatar_div {
+  margin-bottom: -1.5rem;
+}
+
 
   .login h2 {
     margin: 20px 0 0; 
@@ -107,7 +114,11 @@
 .links a:last-child {
   text-align: right;
 }
+.registerLink a:last-child {
 
+  text-align: center;
+  
+}
   .login h2,
   .login p,
   .login a {

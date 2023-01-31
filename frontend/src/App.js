@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Footer, Header, Login, Productdetails } from "./components/allComponents";
+import { Footer, Header, Login, Productdetails, Register } from "./components/allComponents";
 import { Home } from "./pages/allpages";
 import { Toaster } from "react-hot-toast";
 
@@ -16,6 +16,7 @@ function App() {
           <Route path="/product/:id" element={<Productdetails />} exact />
 
           <Route path="/login" element={<Login/>}/>
+          <Route path="/register" element={<Register/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>
