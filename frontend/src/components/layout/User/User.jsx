@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 const User = () => {
-  const user = true;
+  const user = false;
   const [profileOpen, setProfileOpen] = useState(false);
 
   const close = () => {
@@ -64,7 +64,7 @@ const User = () => {
             )}
           </>
         ) : (
-          <button>My Account</button>
+          <Link to='/login' style={{color: 'green', fontWeight: 'bold', marginRight: '15px'}}>My Account</Link>
         )}
       </div>
     </>
