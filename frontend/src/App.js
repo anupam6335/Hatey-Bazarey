@@ -1,10 +1,24 @@
+import React, { useEffect, useState } from 'react'
+
 import "./App.css";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Footer, Header, Login, Productdetails, Register } from "./components/allComponents";
 import { Home } from "./pages/allpages";
 import { Toaster } from "react-hot-toast";
 
+
+import { loadUser } from './actions/userActions'
+import store from './store'
+import axios from 'axios'
+
+import { useSelector } from 'react-redux';
+
 function App() {
+
+  useEffect(() => {
+    store.dispatch(loadUser())
+  }, [])
+  const { user, isAuthenticated, loading } = useSelector(state => state.auth)
   return (
     <div className="App">
       <Toaster position="top-center" reverseOrder={false} />

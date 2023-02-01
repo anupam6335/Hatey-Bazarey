@@ -21,7 +21,7 @@ const Register = () => {
 
   const [avatar, setAvatar] = useState("");
   const [avatarPreview, setAvatarPreview] = useState(
-    "/assets/userAvatar/maleuser.webp"
+    "/assets/userAvatar/maleuser.png"
   );
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -136,11 +136,11 @@ const Register = () => {
                   name="avatar"
                   className="custom-file-input"
                   id="customFile"
-                  accept="assets/iamges/*"
+                  accept="assets/images/*"
                   onChange={onChange}
                 />
                 <label className="custom-file-label" htmlFor="customFile">
-                  Choose Avatar
+                  Choose your profile pic
                 </label>
               </div>
             </div>
