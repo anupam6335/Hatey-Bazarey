@@ -4,10 +4,12 @@ import { BsBagCheck } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { RxDashboard } from "react-icons/rx";
 import { BiLogOut } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
+import { logout } from "../../../actions/userActions";
+import { toast } from "react-hot-toast";
 import "../Header/Header.css";
+
 const User = () => {
   let loginUser = false;
   const [profileOpen, setProfileOpen] = useState(false);
@@ -17,11 +19,16 @@ const User = () => {
   };
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { user, loading } = useSelector((state) => state.auth);
   if (user) {
     loginUser = true;
   }
-  const logoutHandler = (e) => {};
+  const logoutHandler = () => {
+    dispatch(logout());
+    toast.success('Logged out successfully')
+    navigate('/login')
+  };
   return (
     <>
       <div className="profile">
@@ -50,6 +57,11 @@ const User = () => {
                   </Link>
                   <div className="text">
                     <h4>{user.name}</h4>
+                    <label>
+                      {user && user.role === "admin"
+                        ? "Admin"
+                        : "Royel Customer"}
+                    </label>
                   </div>
                 </div>
                 <Link to="/me">
