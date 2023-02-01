@@ -242,6 +242,7 @@ header {
   right: 10px;
   width: 250px;
   background: #fff;
+  margin-top: 15px;
 }
 .openProfile .box {
   display: flex;
@@ -256,6 +257,7 @@ header {
   margin-right: 20px;
 }
 .openProfile h4 {
+  margin-bottom: -2px;
   font-size: 15px;
   font-weight: 500;
 }

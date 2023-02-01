@@ -2,69 +2,108 @@ import { useState } from "react";
 import { IoSettingsOutline } from "react-icons/io5";
 import { BsBagCheck } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
-import { GrHelp } from "react-icons/gr";
+import { RxDashboard } from "react-icons/rx";
 import { BiLogOut } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
+import "../Header/Header.css";
 const User = () => {
-  const user = false;
+  let loginUser = false;
   const [profileOpen, setProfileOpen] = useState(false);
 
   const close = () => {
     setProfileOpen(null);
   };
-  const logoutHandler = (e) => {
+
+  const dispatch = useDispatch();
+  const { user, loading } = useSelector((state) => state.auth);
+  if (user) {
+    loginUser = true;
   }
+  const logoutHandler = (e) => {};
   return (
     <>
-      <div className='profile'>
-        {user ? (
+      <div className="profile">
+        {loginUser ? (
           <>
-            <button className='img' onClick={() => setProfileOpen(!profileOpen)}>
-              <img src='https://cdn-icons-png.flaticon.com/512/2202/2202112.png' alt='' />
+            <button
+              className="img"
+              onClick={() => setProfileOpen(!profileOpen)}
+            >
+              <img
+                src={user.avatar && user.avatar.url}
+                alt={user && user.name}
+              />
             </button>
 
             {profileOpen && (
-              <div className='openProfile boxItems' onClick={close}>
-                <div className='image'>
-                  <Link to='/account'>
-                    <div className='img'>
-                      <img src='https://cdn-icons-png.flaticon.com/512/2202/2202112.png' alt='' />
+              <div className="openProfile boxItems" onClick={close}>
+                <div className="image">
+                  <Link to="/account">
+                    <div className="img">
+                      <img
+                        src={user.avatar && user.avatar.url}
+                        alt={user && user.name}
+                      />
                     </div>
                   </Link>
-                  <div className='text'>
-                    <h4>Eden Smith</h4>
-                    <label htmlFor=''>Los Angeles,CA</label>
+                  <div className="text">
+                    <h4>{user.name}</h4>
                   </div>
                 </div>
-                <Link to='/login'>
-                  <button className='box'>
-                    <IoSettingsOutline className='icon' />
+                <Link to="/me">
+                  <button className="box">
+                    <IoSettingsOutline className="icon" />
                     <h4>My Account</h4>
                   </button>
                 </Link>
-                <button className='box'>
-                  <BsBagCheck className='icon' />
-                  <h4>My Order</h4>
-                </button>
-                <button className='box'>
+
+                {/* <button className='box'>
                   <AiOutlineHeart className='icon' />
                   <h4>Wishlist</h4>
                 </button>
                 <button className='box'>
                   <GrHelp className='icon' />
                   <h4>Help</h4>
-                </button>
-                <button className='box' onClick={logoutHandler}>
-                  <BiLogOut className='icon' />
-                  <h4>Log Out</h4>
-                </button>
+                </button> */}
+                {user && user.role !== "admin" ? (
+                  <Link to="/orders/me">
+                    <button className="box">
+                      <BsBagCheck className="icon" />
+                      <h4>My Order</h4>
+                    </button>
+                  </Link>
+                ) : (
+                  <Link to="/dashboard">
+                    <button className="box">
+                      <RxDashboard className="icon" />
+                      <h4>Dashboard</h4>
+                    </button>
+                  </Link>
+                )}
+                <Link to="/">
+                  <button className="box" onClick={logoutHandler}>
+                    <BiLogOut className="icon" />
+                    <h4>Log Out</h4>
+                  </button>
+                </Link>
               </div>
             )}
           </>
         ) : (
-          <Link to='/login' style={{color: 'green', fontWeight: 'bold', marginRight: '15px'}}>My Account</Link>
+          !loading && (
+            <Link
+              to="/login"
+              style={{
+                color: "green",
+                fontWeight: "bold",
+                marginRight: "15px",
+              }}
+            >
+              My Account
+            </Link>
+          )
         )}
       </div>
     </>
