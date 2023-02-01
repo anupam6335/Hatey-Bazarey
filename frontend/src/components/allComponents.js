@@ -11,3 +11,4 @@ export { default as Productdetails } from "./Productdetails/Productdetails";
 export {default as Search} from './layout/Search';
 export {default as Login} from './layout/User/Login/Login';
 export {default as Register} from './layout/User/Register/Register';
+export {default as Profile} from './layout/User/Profile/Profile';

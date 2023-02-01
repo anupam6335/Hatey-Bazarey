@@ -47,7 +47,7 @@ const User = () => {
             {profileOpen && (
               <div className="openProfile boxItems" onClick={close}>
                 <div className="image">
-                  <Link to="/account">
+                  <Link to="/me">
                     <div className="img">
                       <img
                         src={user.avatar && user.avatar.url}
