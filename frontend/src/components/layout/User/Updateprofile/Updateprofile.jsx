@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { MetaData } from "../../../allComponents";
 
+import { FaUserCircle } from "react-icons/fa";
+
 import { useDispatch, useSelector } from "react-redux";
 import {
   updateProfile,
@@ -82,7 +84,7 @@ const Updateprofile = () => {
             onSubmit={submitHandler}
             encType="multipart/form-data"
           >
-            <h2>Hi, {user?.name} </h2>
+            <h2><FaUserCircle className="icon" /> Hi, {user?.name} </h2>
             <label style={{ textAlign: "center", fontWeight: "bold" }}>
               {user.role === "admin" ? "( Admin )" : ""}
             </label>

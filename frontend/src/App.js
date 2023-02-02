@@ -10,7 +10,8 @@ import {
   Register,
   Profile,
   ProtectedRoute,
-  Updateprofile
+  Updateprofile,
+  UpdatePassword
 } from "./components/allComponents";
 import { Home } from "./pages/allpages";
 import { Toaster } from "react-hot-toast";
@@ -42,6 +43,7 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route  element={<Profile />} path="/me" exact/>
             <Route  element={<Updateprofile />} path="/me/update" exact/>
+            <Route  element={<UpdatePassword />} path="/password/update" exact/>
           </Route>
         </Routes>
         <Footer />

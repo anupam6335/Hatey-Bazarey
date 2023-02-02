@@ -14,3 +14,4 @@ export {default as Register} from './layout/User/Register/Register';
 export {default as Profile} from './layout/User/Profile/Profile';
 export {default as ProtectedRoute} from './Route/ProtectedRoute';
 export {default as Updateprofile} from './layout/User/Updateprofile/Updateprofile';
+export {default as UpdatePassword} from './layout/User/UpdatePassword/UpdatePassword';
