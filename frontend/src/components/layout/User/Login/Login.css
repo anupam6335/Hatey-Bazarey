@@ -9,6 +9,9 @@
 .Register_BOX {
   margin-top: -.5rem;
 }
+.Update_BOX {
+  margin-top: -.7rem;
+}
 .video__Login {
   width: 50%;
   height: inherit;
@@ -136,4 +139,23 @@
 
 .login a:hover {
   text-decoration: underline;
+}
+
+.Update_BOX {
+ /* background: #31524d; */
+ padding: 25px;
+ border-bottom-left-radius: 10%;
+ border-top-right-radius: 10%;
+ box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.Update_BOX:hover {
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 10%;
+  border-top-right-radius: 0%;
+  border-top-left-radius: 10%;
+}
+
+.newTitle {
+  background:  linear-gradient(to right top, #293548, #306375, #449493, #80c39f, #d8eea7);;
 }
