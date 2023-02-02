@@ -6,8 +6,11 @@ import { BsQuestionCircle } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { forgotPassword, clearErrors } from "../../../../actions/userActions";
 
-import { toast } from "react-hot-toast";
+// import { toast } from "react-hot-toast";
 import { useEffect, useState } from "react";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -19,12 +22,31 @@ const ForgotPassword = () => {
   );
   useEffect(() => {
       if (error) {
-      toast.error(error);
+        toast(`${error}`, {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "red",
+          });
       dispatch(clearErrors());
     }
 
     if (message) {
-      toast.success(message);
+      // toast.success(message);
+      toast(`${message}`, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
     }
   }, [dispatch, toast, error, message]);
 
