@@ -9,6 +9,8 @@ import {
 import { MetaData } from "../allComponents";
 import { toast } from "react-hot-toast";
 import { useParams } from "react-router-dom";
+import { addItemToCart } from "../../actions/cartActions";
+
 import "./Productdetails.css";
 const Productdetails = ({ match }) => {
   const [quantity, setQuantity] = useState(1);
@@ -28,9 +30,11 @@ const Productdetails = ({ match }) => {
     const count = document.querySelector(".count");
 
     if (count.valueAsNumber >= product.stock) {
-      toast.error(`our stock is ${product.stock}\n if you want more than this so please wait when our stock is incrase`)
-      return
-    };
+      toast.error(
+        `our stock is ${product.stock}\n if you want more than this so please wait when our stock is incrase`
+      );
+      return;
+    }
 
     const qty = count.valueAsNumber + 1;
     setQuantity(qty);
@@ -40,12 +44,17 @@ const Productdetails = ({ match }) => {
     const count = document.querySelector(".count");
 
     if (count.valueAsNumber <= 1) {
-      toast.error(`you can't select 0\n please order more than 0 quantity`)
-      return
-    };
+      toast.error(`you can't select 0\n please order more than 0 quantity`);
+      return;
+    }
 
     const qty = count.valueAsNumber - 1;
     setQuantity(qty);
+  };
+
+  const addToCart = () => {
+    dispatch(addItemToCart(matchId.id, quantity));
+    toast.success("Item Added to Cart");
   };
 
   return (
@@ -84,8 +93,12 @@ const Productdetails = ({ match }) => {
 
             <h2>${product.price}</h2>
 
-            <div className="stockCounter d-inline" >
-              <span className="btn btn-danger minus" onClick={decreaseQty} style={{ fontSize: '30px'}}>
+            <div className="stockCounter d-inline">
+              <span
+                className="btn btn-danger minus"
+                onClick={decreaseQty}
+                style={{ fontSize: "30px" }}
+              >
                 -
               </span>
 
@@ -93,16 +106,24 @@ const Productdetails = ({ match }) => {
                 type="number"
                 className="form-control count d-inline"
                 value={quantity}
-                style={{width: '56px', marginLeft: '10px'}}
+                style={{ width: "56px", marginLeft: "10px" }}
                 readOnly
               />
 
-              <span className="btn btn-primary plus" onClick={increaseQty} style={{marginRight: '10px', fontSize: '30px'}}>
+              <span
+                className="btn btn-primary plus"
+                onClick={increaseQty}
+                style={{ marginRight: "10px", fontSize: "30px" }}
+              >
                 +
               </span>
             </div>
 
-            <button className={product.stock === 0 ? "disableBtn" : "btn"}>
+            <button
+              className={product.stock === 0 ? "disableBtn" : "btn"}
+              disabled={product.stock === 0}
+              onClick={addToCart}
+            >
               {product.stock === 0 ? "comming soon" : "Add To Cart"}
             </button>
             <h4>Product Details</h4>
