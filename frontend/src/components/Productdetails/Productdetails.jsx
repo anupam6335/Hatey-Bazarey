@@ -11,18 +11,42 @@ import { toast } from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import "./Productdetails.css";
 const Productdetails = ({ match }) => {
+  const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
   const { loading, error, product } = useSelector(
     (state) => state.productDetails
   );
   const matchId = useParams();
   useEffect(() => {
-    // console.log(matchId);
     dispatch(getProductDetails(matchId.id));
     if (error) {
       toast.error(error);
     }
   }, [dispatch, error, matchId]);
+
+  const increaseQty = () => {
+    const count = document.querySelector(".count");
+
+    if (count.valueAsNumber >= product.stock) {
+      toast.error(`our stock is ${product.stock}\n if you want more than this so please wait when our stock is incrase`)
+      return
+    };
+
+    const qty = count.valueAsNumber + 1;
+    setQuantity(qty);
+  };
+
+  const decreaseQty = () => {
+    const count = document.querySelector(".count");
+
+    if (count.valueAsNumber <= 1) {
+      toast.error(`you can't select 0\n please order more than 0 quantity`)
+      return
+    };
+
+    const qty = count.valueAsNumber - 1;
+    setQuantity(qty);
+  };
 
   return (
     <>
@@ -35,7 +59,7 @@ const Productdetails = ({ match }) => {
             {product.images &&
               product.images.map((image, idx) => (
                 <img
-                key={idx}
+                  key={idx}
                   className="d-block w-100"
                   src={image.url}
                   alt={product.title}
@@ -43,41 +67,6 @@ const Productdetails = ({ match }) => {
                   id="MainImg"
                 />
               ))}
-
-            {/* <div className="small__img_group">
-              <div className="small__img_col">
-                <img
-                  src="https://res.cloudinary.com/hateybazarey/image/upload/v1674912845/products/s4_pnwgvf.png"
-                  alt=""
-                  style={{ width: "100%" }}
-                  className="small__img"
-                />
-              </div>
-              <div className="small__img_col">
-                <img
-                  src="https://res.cloudinary.com/hateybazarey/image/upload/v1674912617/products/s3_qwk4b4.jpg"
-                  alt=""
-                  style={{ width: "100%" }}
-                  className="small__img"
-                />
-              </div>
-              <div className="small__img_col">
-                <img
-                  src="https://res.cloudinary.com/hateybazarey/image/upload/v1674912615/products/s2_byjxpa.webp"
-                  alt=""
-                  style={{ width: "100%" }}
-                  className="small__img"
-                />
-              </div>
-              <div className="small__img_col">
-                <img
-                  src="https://res.cloudinary.com/hateybazarey/image/upload/v1674912616/products/s1_o6hzyd.jpg"
-                  alt=""
-                  style={{ width: "100%" }}
-                  className="small__img"
-                />
-              </div>
-            </div> */}
           </div>
 
           <div className="single__pro_details">
@@ -94,17 +83,27 @@ const Productdetails = ({ match }) => {
             </div>
 
             <h2>${product.price}</h2>
-            {/* <select>
-              <option>Select Size</option>
-              <option>XL</option>
-              <option>XXL</option>
-              <option>Small</option>
-            </select> */}
 
-            <input type="number" max="10" min="1" placeholder="1" />
+            <div className="stockCounter d-inline" >
+              <span className="btn btn-danger minus" onClick={decreaseQty} style={{ fontSize: '30px'}}>
+                -
+              </span>
 
-            <button className={product.stock === 0 ? 'disableBtn': 'btn'} >
-            {product.stock === 0 ? 'comming soon' : 'Add To Cart' }
+              <input
+                type="number"
+                className="form-control count d-inline"
+                value={quantity}
+                style={{width: '56px', marginLeft: '10px'}}
+                readOnly
+              />
+
+              <span className="btn btn-primary plus" onClick={increaseQty} style={{marginRight: '10px', fontSize: '30px'}}>
+                +
+              </span>
+            </div>
+
+            <button className={product.stock === 0 ? "disableBtn" : "btn"}>
+              {product.stock === 0 ? "comming soon" : "Add To Cart"}
             </button>
             <h4>Product Details</h4>
             <span>{product.description}</span>

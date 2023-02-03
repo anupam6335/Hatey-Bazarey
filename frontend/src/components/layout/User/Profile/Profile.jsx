@@ -44,13 +44,13 @@ const Profile = () => {
             </div>
             <div className="profile__details">
               <h4 className="profile__details_title">Full Name</h4>
-              <p>{user.name}</p>
+              <p className="profile__details_title_info">{user.name}</p>
 
               <h4 className="profile__details_title">Email Address</h4>
-              <p>{user.email}</p>
+              <p className="profile__details_title_info">{user.email}</p>
 
               <h4 className="profile__details_title">Joined On</h4>
-              <p>{String(user.createdAt).substring(0, 10)}</p>
+              <p className="profile__details_title_info">{String(user.createdAt).substring(0, 10)}</p>
 
               {user.role !== "admin" && (
                 <Link to="/orders/me" className="btns order__btn"

@@ -53,7 +53,7 @@
   border-radius: 20px;
   padding: 5px;
 }
-p{
+.profile__details_title_info{
   color: rgb(13, 136, 218);
   font-weight: bold;
   font-size: 20px;
