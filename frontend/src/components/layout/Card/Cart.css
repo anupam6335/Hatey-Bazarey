@@ -1,0 +1,92 @@
+.section__p1 {
+  padding: 40px 80px;
+}
+
+.quan__pizza {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quan__input {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  border: salmon rgba(0, 0, 0, 0.634);
+  outline: none;
+  text-align: center;
+  font-weight: bold;
+  margin-right: 5px;
+}
+.quan__input:focus {
+  border: none;
+  outline: none;
+}
+.quan {
+  position: absolute;
+  top: -0.8rem;
+  font-weight: bold;
+}
+
+.quan__min {
+  color: #fff;
+  background: rgb(248, 66, 63);
+}
+.quan__min:hover {
+  color: #fff;
+  background: rgb(231, 21, 18);
+}
+.quan__plus {
+  color: #fff;
+  background: rgb(63, 248, 97);
+}
+.quan__plus:hover {
+  color: #fff;
+  background: rgb(0, 255, 0);
+}
+
+.itemNameCart:hover {
+  border: none !important;
+}
+.deleteCart {
+  margin-left: 20px;
+  width: 75px !important;
+}
+.deleteCart:hover {
+    background:#ff0000 !important;
+    /* width: fit-content; */
+
+}
+.ul {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  /* background: #f13333; */
+}
+
+.unit__number {
+    /* margin-top: 2rem; */
+    position: absolute;
+    width: 50px!important;
+    height: 50px!important;
+    /* margin-top: 2rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000 !important;
+    font-size: .9rem !important;
+    left: 12rem;
+    background: #fff !important;
+}
+
+.orderSummaryCart {
+  height: 50vh !important;
+  position: relative !important;
+}
+.checkoutCart {
+  position: absolute;
+  margin-left: 5rem;
+  /* margin-bottom: 5rem; */
+}

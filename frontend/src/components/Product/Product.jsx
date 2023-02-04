@@ -20,9 +20,6 @@ const Product = ({ product }) => {
           </div>
           <h4>${product.price}</h4>
         </div>
-        {/* <Link to={`/product/${product._id}`} className="view__product cart">
-          View Details
-        </Link> */}
       </Link>
     </>
   );

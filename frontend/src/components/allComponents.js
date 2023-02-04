@@ -1,9 +1,8 @@
 export { default as Header } from "./layout/Header/Header";
 export { default as Footer } from "./layout/Footer";
 export { default as Banner } from "./layout/Banner";
-export { default as Card } from "./layout/Card/Card";
+export { default as Cart } from "./layout/Card/Cart";
 export { default as User } from "./layout/User/User";
-export { default as CartItems } from "./layout/CartItems/CartItems";
 export { default as MetaData } from "./layout/MetaData";
 export { default as Product } from "./Product/Product";
 export { default as Loader } from "./layout/Loader/Loader";
@@ -17,3 +16,4 @@ export {default as Updateprofile} from './layout/User/Updateprofile/Updateprofil
 export {default as UpdatePassword} from './layout/User/UpdatePassword/UpdatePassword';
 export {default as ForgotPassword} from './layout/User/ForgotPassword/ForgotPassword';
 export {default as NewPassword} from './layout/User/NewPassword/NewPassword';
+export {default as PageHader} from './layout/PageHader/PageHader';

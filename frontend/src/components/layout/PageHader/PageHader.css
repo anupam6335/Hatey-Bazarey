@@ -1,0 +1,24 @@
+#page-header {
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
+#page-header h2,
+#page-header p {
+    color: #979797;
+    font-weight: bold;
+}
+
+#page-header h2 {
+    font-size: 4rem;
+}
+
+#page-header p {
+    font-size: 1.5rem;
+}

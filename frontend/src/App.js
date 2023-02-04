@@ -13,7 +13,8 @@ import {
   Updateprofile,
   UpdatePassword,
   ForgotPassword,
-  NewPassword
+  NewPassword,
+  Cart
 } from "./components/allComponents";
 import { Home } from "./pages/allpages";
 import { Toaster } from "react-hot-toast";
@@ -43,6 +44,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/password/forgot" element={<ForgotPassword />}  exact/>
           <Route path="/password/reset/:token" element={<NewPassword />} exact/>
+          <Route element={<Cart/>} path='/cart' exact/>
 
           <Route element={<ProtectedRoute />}>
             <Route  element={<Profile />} path="/me" exact/>

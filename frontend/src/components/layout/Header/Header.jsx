@@ -1,8 +1,8 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
-import { AiOutlineSearch } from "react-icons/ai";
-import { Card, User, Loader, Search } from "../../allComponents";
+import { User, Loader, Search } from "../../allComponents";
 import { useDispatch, useSelector } from "react-redux";
+import { BiShoppingBag } from "react-icons/bi";
 
 const Header = () => {
   window.addEventListener("scroll", function () {
@@ -13,10 +13,9 @@ const Header = () => {
 
   const dispatch = useDispatch();
   const { user, loading } = useSelector((state) => state.auth);
-
+  const { cartItems } = useSelector(state => state.cart)
   return (
     <>
-      {" "}
       {loading ? (
         <Loader />
       ) : (
@@ -34,7 +33,10 @@ const Header = () => {
             <Search />
             <div className="account flexCenter">
               <Link to="/cart">
-                <Card />
+                <div className="card">
+                  <BiShoppingBag className="cardIcon" />
+                  <span className="flexCenter">{cartItems.length}</span>
+                </div>
               </Link>
               <User />
             </div>
