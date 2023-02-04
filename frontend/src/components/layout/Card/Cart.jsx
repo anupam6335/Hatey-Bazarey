@@ -174,7 +174,7 @@ const Cart = () => {
                       <div className="mt-5">
                         <strong>Total amount</strong>
                         <strong>
-                          <p className="mb-0">(including GST)</p>
+                          <p className="mb-0"></p>
                         </strong>
                       </div>
                       <span className="unit__number mt-5">

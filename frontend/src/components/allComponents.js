@@ -18,3 +18,4 @@ export {default as ForgotPassword} from './layout/User/ForgotPassword/ForgotPass
 export {default as NewPassword} from './layout/User/NewPassword/NewPassword';
 export {default as PageHader} from './layout/PageHader/PageHader';
 export {default as Shipping} from './layout/Card/Shipping/Shipping';
+export {default as ConfirmOrder} from './layout/Card/ConfirmOrder/ConfirmOrder';
