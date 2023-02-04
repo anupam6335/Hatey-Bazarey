@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { countries } from "countries-list";
 
 import MetaData from "../../MetaData";
+import CheckoutSteps from '../Checkoutsteps/CheckoutSteps'
 import '../../User/Login/Login.css';
 
 import { useDispatch, useSelector } from "react-redux";
@@ -30,6 +31,7 @@ const Shipping = () => {
   return (
     <>
       <MetaData title={"Shipping Info"} />
+      <CheckoutSteps shipping /> 
       <div className="LOGIN_BOX">
         <video
           width="520"
