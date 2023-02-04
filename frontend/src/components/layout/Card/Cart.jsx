@@ -8,7 +8,7 @@ import MetaData from "../MetaData";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
-import { addItemToCart } from "../../../actions/cartActions";
+import { addItemToCart, removeItemFromCart } from "../../../actions/cartActions";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const Cart = () => {
 
   const { cartItems } = useSelector((state) => state.cart);
   const removeCartItemHandler = (id) => {
-    
+    dispatch(removeItemFromCart(id))
   };
   const increaseQty = (id, quantity, stock) => {
     const newQty = quantity + 1;
