@@ -182,14 +182,15 @@ const Cart = () => {
                       </span>
                     </li>
                   </ul>
-
-                  <button
+                  
+                  {cartItems.length === 0 ? '' : <button
                     type="button"
                     className={`btn btn-lg btn-block checkoutCart`}
                     onClick={checkoutHandler}
                   >
                     Checkout
-                  </button>
+                  </button>}
+                  
                 </div>
               </div>
             </div>
