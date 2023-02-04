@@ -14,7 +14,8 @@ import {
   UpdatePassword,
   ForgotPassword,
   NewPassword,
-  Cart
+  Cart,
+  Shipping
 } from "./components/allComponents";
 import { Home } from "./pages/allpages";
 import { Toaster } from "react-hot-toast";
@@ -50,6 +51,7 @@ function App() {
             <Route  element={<Profile />} path="/me" exact/>
             <Route  element={<Updateprofile />} path="/me/update" exact/>
             <Route  element={<UpdatePassword />} path="/password/update" exact/>
+            <Route  element={<Shipping />} path="/shipping" exact/>
           </Route>
         </Routes>
         <Footer />

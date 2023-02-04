@@ -17,3 +17,4 @@ export {default as UpdatePassword} from './layout/User/UpdatePassword/UpdatePass
 export {default as ForgotPassword} from './layout/User/ForgotPassword/ForgotPassword';
 export {default as NewPassword} from './layout/User/NewPassword/NewPassword';
 export {default as PageHader} from './layout/PageHader/PageHader';
+export {default as Shipping} from './layout/Card/Shipping/Shipping';

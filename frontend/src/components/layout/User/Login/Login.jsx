@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { Loader, MetaData } from "../../../allComponents";
 
@@ -16,14 +16,16 @@ const Login = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const { isAuthenticated, error, loading } = useSelector(
     (state) => state.auth
   );
-
+    
+  const redirect = location.search ? '/shipping' : '/'
   useEffect(() => {
     if (isAuthenticated) {
-      navigate("/");
+      navigate(redirect);
     }
 
     if (error) {
