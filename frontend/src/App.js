@@ -16,7 +16,8 @@ import {
   NewPassword,
   Cart,
   Shipping,
-  ConfirmOrder
+  ConfirmOrder,
+  Payment,
 } from "./components/allComponents";
 import { Home } from "./pages/allpages";
 import { Toaster } from "react-hot-toast";
@@ -27,20 +28,24 @@ import axios from "axios";
 
 import { useSelector } from "react-redux";
 
+// Payment
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 function App() {
-  const [stripeApiKey, setStripeApiKey] = useState('');
+  const [stripeApiKey, setStripeApiKey] = useState("");
   useEffect(() => {
     store.dispatch(loadUser());
 
     async function getStripApiKey() {
-      const { data } = await axios.get('/api/v1/stripeapi');
+      const { data } = await axios.get("/api/v1/stripeapi");
 
-      setStripeApiKey(data.stripeApiKey)
+      setStripeApiKey(data.stripeApiKey);
     }
 
     getStripApiKey();
   }, []);
+
   const { user, isAuthenticated, loading } = useSelector((state) => state.auth);
   return (
     <div className="App">
@@ -54,16 +59,31 @@ function App() {
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/password/forgot" element={<ForgotPassword />}  exact/>
-          <Route path="/password/reset/:token" element={<NewPassword />} exact/>
-          <Route element={<Cart/>} path='/cart' exact/>
+          <Route path="/password/forgot" element={<ForgotPassword />} exact />
+          <Route
+            path="/password/reset/:token"
+            element={<NewPassword />}
+            exact
+          />
+          <Route element={<Cart />} path="/cart" exact />
 
           <Route element={<ProtectedRoute />}>
-            <Route  element={<Profile />} path="/me" exact/>
-            <Route  element={<Updateprofile />} path="/me/update" exact/>
-            <Route  element={<UpdatePassword />} path="/password/update" exact/>
-            <Route  element={<Shipping />} path="/shipping" exact/>
-            <Route  element={<ConfirmOrder />} path="/order/confirm" exact/>
+            <Route element={<Profile />} path="/me" exact />
+            <Route element={<Updateprofile />} path="/me/update" exact />
+            <Route element={<UpdatePassword />} path="/password/update" exact />
+            <Route element={<Shipping />} path="/shipping" exact />
+            <Route element={<ConfirmOrder />} path="/order/confirm" exact />
+            {stripeApiKey && (
+              <Route
+                element={
+                  <Elements stripe={loadStripe(stripeApiKey)} >
+                    {/* <Route element={<Payment />} path="/payment" exact /> */}
+                    <Payment/>
+                  </Elements>
+                }
+                path="/payment"
+              />
+            )}
           </Route>
         </Routes>
         <Footer />

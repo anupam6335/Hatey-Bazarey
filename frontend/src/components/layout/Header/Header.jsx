@@ -5,11 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { BiShoppingBag } from "react-icons/bi";
 
 const Header = () => {
-  window.addEventListener("scroll", function () {
-    const header = this.document.querySelector(".header");
-    header.classList.toggle("active", this.window.scrollY > 100);
-  });
-  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  // window.addEventListener("scroll", function () {
+  //   const header = this.document.querySelector(".header");
+  //   header.classList.toggle("active", this.window.scrollY > 100);
+  // });
+  // window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
 
   const dispatch = useDispatch();
   const { user, loading } = useSelector((state) => state.auth);
