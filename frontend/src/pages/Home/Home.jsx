@@ -50,13 +50,13 @@ const Home = () => {
       return toast.error(error);
     }
     dispatch(getProducts(keyword, currentPage, price, category, rating));
-  }, [dispatch, error, keyword, currentPage, price, category, rating]);
+  }, [dispatch, error, toast, keyword, currentPage, price, category, rating]);
 
   function setCurrentPageNo(pageNumber) {
     setCurrentPage(pageNumber);
   }
 
-  let count = productsCount;
+  let count = 4;
   if (keyword) {
     let proLen = products.length;
     if (proLen <= 8) {
@@ -127,14 +127,14 @@ const Home = () => {
                 <h2 className="title_for_trending_and_search">
                   {keyword
                     ? `${keyword.toLocaleUpperCase()}`
-                    : "Trending Products"}
+                    : "Best sellers"}
                 </h2>
                 <p>
-                  {!keyword && currentPage === 3 && "Fresh Fruits"}
+                  {/* {!keyword && currentPage === 3 && "Fresh Fruits"}
                   {!keyword &&
                     currentPage === 1 &&
                     "Summer Collection New Modern Design"}
-                  {!keyword && currentPage === 2 && "Our Electronics Product"}
+                  {!keyword && currentPage === 2 && "Our Electronics Product"} */}
                 </p>
                 <div to="/products" className="view__product view__product_1">
                   <div className="pro__container">
@@ -151,14 +151,14 @@ const Home = () => {
               <h2>
                 {keyword
                   ? `${keyword.toLocaleUpperCase()}`
-                  : "Trending Products"}
+                  : "Best sellers"}
               </h2>
               <p>
-                {!keyword && currentPage === 3 && "Fresh Fruits"}
+                {/* {!keyword && currentPage === 3 && "Fresh Fruits"}
                 {!keyword &&
                   currentPage === 1 &&
                   "Summer Collection New Modern Design"}
-                {!keyword && currentPage === 2 && "Our Electronics Product"}
+                {!keyword && currentPage === 2 && "Our Electronics Product"} */}
               </p>
               <div to="/products" className="view__product">
                 <div className="pro__container">

@@ -80,7 +80,7 @@ h6 {
   --gap: 40px;
   --num-col: 4;
   --row-height: 500px;
-  margin-left: -72px;
+  margin-left: 12px;
   box-sizing: border-box;
 
   display: grid;

@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import { User, Loader, Search } from "../../allComponents";
 import { useDispatch, useSelector } from "react-redux";
 import { BiShoppingBag } from "react-icons/bi";
+import { BsShop } from "react-icons/bs";
 
 const Header = () => {
-  // window.addEventListener("scroll", function () {
-  //   const header = this.document.querySelector(".header");
-  //   header.classList.toggle("active", this.window.scrollY > 100);
-  // });
-  // window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  window.addEventListener("scroll", function () {
+    const header = this.document.querySelector(".header");
+    header.classList.toggle("active", this.window.scrollY > 100);
+  });
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
 
   const dispatch = useDispatch();
   const { user, loading } = useSelector((state) => state.auth);
@@ -32,7 +33,12 @@ const Header = () => {
             </div>
             <Search />
             <div className="account flexCenter">
-              <Link to="/cart">
+            <Link to="/shop" style={{marginRight: '30px', color: 'black'}}>
+                <div className="card">
+                  <BsShop className="cardIcon" />
+                </div>
+              </Link>
+              <Link to="/cart" style={{ color: 'black'}}>
                 <div className="card">
                   <BiShoppingBag className="cardIcon" />
                   <span className="flexCenter">{cartItems.length}</span>
