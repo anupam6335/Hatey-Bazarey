@@ -18,6 +18,7 @@ import {
   Shipping,
   ConfirmOrder,
   Payment,
+  Success,
 } from "./components/allComponents";
 import { Home } from "./pages/allpages";
 import { Toaster } from "react-hot-toast";
@@ -66,13 +67,13 @@ function App() {
             exact
           />
           <Route element={<Cart />} path="/cart" exact />
-
           <Route element={<ProtectedRoute />}>
             <Route element={<Profile />} path="/me" exact />
             <Route element={<Updateprofile />} path="/me/update" exact />
             <Route element={<UpdatePassword />} path="/password/update" exact />
             <Route element={<Shipping />} path="/shipping" exact />
             <Route element={<ConfirmOrder />} path="/order/confirm" exact />
+            
             {stripeApiKey && (
               <Route
                 element={
@@ -84,6 +85,7 @@ function App() {
                 path="/payment"
               />
             )}
+            <Route element={<Success />} path="/success" exact />
           </Route>
         </Routes>
         <Footer />

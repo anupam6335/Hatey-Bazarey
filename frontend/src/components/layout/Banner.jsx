@@ -20,7 +20,7 @@ const Banner = () => {
                 alt=" main banner"
               />
                <Link to={`/product/63d7c0ac7380ec1467dc131e`} className='view__product_bose'>
-                <BiShoppingBag className="cardIcon" />
+                <BiShoppingBag className="cardIcon"  />
                 {/* view product */}
               </Link>
             

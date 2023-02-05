@@ -53,8 +53,8 @@
 }
 .box > h3 > p {
     font-size: 15rem;
-    margin-left: 29rem;
-    margin-top: -8.89rem;
+    margin-left: 25rem;
+    margin-top: -4.89rem;
 }
 .box > p {
     position: absolute;
@@ -152,7 +152,7 @@
 
     position: absolute;
     top: 32rem;
-    left: 42rem;
+    left: 38rem;
     color: rgb(51, 50, 50);
   }
   .view__product_bose:hover {

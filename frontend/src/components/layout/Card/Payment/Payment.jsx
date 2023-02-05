@@ -38,11 +38,69 @@ const Payment = () => {
   const { user } = useSelector((state) => state.auth);
   const { cartItems, shippingInfo } = useSelector((state) => state.cart);
 
-  useEffect(() => {
-  }, []);
-  console.log('payment')
+  useEffect(() => {}, []);
+
+  const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
+
+  const paymentData = {
+    amount: Math.round(orderInfo.totalPrice * 100),
+  };
+  // console.log('payment')
   const submitHandler = async (e) => {
-   
+    e.preventDefault();
+    document.addEventListener("DOMContentLoaded", function(event) { 
+    document.querySelector("#pay_btn").disabled = true;
+  });
+    let res;
+    try {
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      res = await axios.post("/api/v1/payment/process", paymentData, config);
+
+      const clientSecret = res.data.client_secret;
+
+      // console.log(clientSecret);
+
+      if (!stripe || !elements) {
+        return;
+      }
+
+      const result = await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: elements.getElement(CardNumberElement),
+          billing_details: {
+            name: user.name,
+            email: user.email,
+          },
+        },
+      });
+
+      if (result.error) {
+        toast.error(result.error.message);
+        document.addEventListener("DOMContentLoaded", function(event) { 
+          document.querySelector("#pay_btn").disabled = false;
+        });
+      } else {
+        // The payment is processed or not
+        if (result.paymentIntent.status === "succeeded") {
+
+          // TODO : new order
+
+          navigate("/success");
+        } else {
+          toast.error("There is some issue while payment processing");
+        }
+      }
+    } catch (error) {
+      document.addEventListener("DOMContentLoaded", function(event) { 
+        document.querySelector("#pay_btn").disabled = false;
+      });
+      toast.error(error.response.data.message);
+    }
   };
 
   return (
@@ -89,10 +147,7 @@ const Payment = () => {
             options={options}
           />
 
-          <input
-            type="submit"
-            value={` Pay `}
-          />
+          <input type="submit" value={` Pay  - $ ${orderInfo && orderInfo.totalPrice} `} />
         </form>
       </div>
     </>
