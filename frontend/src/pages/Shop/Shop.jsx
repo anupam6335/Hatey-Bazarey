@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-import { AiOutlineStar } from "react-icons/ai";
-import { BsBag } from "react-icons/bs";
+
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { getProducts } from "../../actions/productActions";
@@ -9,6 +8,7 @@ import "./Shop.css";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import Pagination from "react-js-pagination";
+import { Loader, MetaData } from "../../components/allComponents";
 const { createSliderWithTooltip } = Slider;
 const Range = createSliderWithTooltip(Slider.Range);
 
@@ -58,7 +58,11 @@ const Shop = () => {
     }
   }
   return (
-    <div className="section__p1">
+    <>
+    <MetaData title={'save money buy more'}/>
+    {loading ? (
+        <Loader />
+      ) : (<div className="section__p1">
       <div className="shop">
         {/* <div className="shop__category">
           <h4 style={{ fontWeight: "bold", marginBottom: "20px" }}>Category</h4>
@@ -154,7 +158,9 @@ const Shop = () => {
           )}
         </div>
       </div>
-    </div>
+    </div>)}
+    
+    </>
   );
 };
 
