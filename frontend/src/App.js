@@ -27,9 +27,19 @@ import axios from "axios";
 
 import { useSelector } from "react-redux";
 
+
 function App() {
+  const [stripeApiKey, setStripeApiKey] = useState('');
   useEffect(() => {
     store.dispatch(loadUser());
+
+    async function getStripApiKey() {
+      const { data } = await axios.get('/api/v1/stripeapi');
+
+      setStripeApiKey(data.stripeApiKey)
+    }
+
+    getStripApiKey();
   }, []);
   const { user, isAuthenticated, loading } = useSelector((state) => state.auth);
   return (
