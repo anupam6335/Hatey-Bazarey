@@ -33,8 +33,19 @@ const Footer = () => {
                 to="/shop"
                 style={{ textDecoration: "none" }}
               >
-                shop
+                Our Shop
               </Link>
+            </li>
+
+            <li class="menu__item">
+              <a
+                class="menu__link"
+                href="https://github.com/anupam6335"
+                target='_blank'
+                style={{ textDecoration: "none" }}
+              >
+                Github
+              </a>
             </li>
           </ul>
           <p style={{ opacity: "0.75" }}>Made with 🤍 by Anupam Debnath</p>

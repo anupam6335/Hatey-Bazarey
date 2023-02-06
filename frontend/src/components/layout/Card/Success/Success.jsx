@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import MetaData from '../../MetaData'
 import './Success.css'
 const Success = () => {
   return (
+    <>
+    <MetaData title={`Payment Successful`}/>
     <div className=' section__p1'>
         <div className="success_box">
           <img src="https://res.cloudinary.com/hateybazarey/image/upload/v1675609999/sucess_u7jhla.gif" alt="" height='100%'/>
@@ -13,6 +16,7 @@ const Success = () => {
           </div>
         </div>
     </div>
+    </>
   )
 }
 

@@ -5,6 +5,7 @@ import CheckoutSteps from "../Checkoutsteps/CheckoutSteps";
 import "../../User/Login/Login.css";
 
 import { useDispatch, useSelector } from "react-redux";
+import { createOrder, clearErrors } from "../../../../actions/orderActions";
 
 import {
   useStripe,
@@ -37,10 +38,28 @@ const Payment = () => {
 
   const { user } = useSelector((state) => state.auth);
   const { cartItems, shippingInfo } = useSelector((state) => state.cart);
+  const { error } = useSelector((state) => state.newOrder);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+      dispatch(clearErrors());
+    }
+  }, [dispatch, toast, error]);
+
+  const order = {
+    orderItems: cartItems,
+    shippingInfo,
+  };
 
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
+
+  if (orderInfo) {
+    order.itemsPrice = orderInfo.itemsPrice;
+    order.shippingPrice = orderInfo.shippingPrice;
+    order.taxPrice = orderInfo.taxPrice;
+    order.totalPrice = orderInfo.totalPrice;
+  }
 
   const paymentData = {
     amount: Math.round(orderInfo.totalPrice * 100),
@@ -48,9 +67,9 @@ const Payment = () => {
   // console.log('payment')
   const submitHandler = async (e) => {
     e.preventDefault();
-    document.addEventListener("DOMContentLoaded", function(event) { 
-    document.querySelector("#pay_btn").disabled = true;
-  });
+    document.addEventListener("DOMContentLoaded", function (event) {
+      document.querySelector("#pay_btn").disabled = true;
+    });
     let res;
     try {
       const config = {
@@ -81,22 +100,27 @@ const Payment = () => {
 
       if (result.error) {
         toast.error(result.error.message);
-        document.addEventListener("DOMContentLoaded", function(event) { 
+        document.addEventListener("DOMContentLoaded", function (event) {
           document.querySelector("#pay_btn").disabled = false;
         });
       } else {
         // The payment is processed or not
         if (result.paymentIntent.status === "succeeded") {
 
-          // TODO : new order
+          order.paymentInfo = {
+            id: result.paymentIntent.id,
+            status: result.paymentIntent.status,
+          };
 
+          dispatch(createOrder(order))
+          
           navigate("/success");
         } else {
           toast.error("There is some issue while payment processing");
         }
       }
     } catch (error) {
-      document.addEventListener("DOMContentLoaded", function(event) { 
+      document.addEventListener("DOMContentLoaded", function (event) {
         document.querySelector("#pay_btn").disabled = false;
       });
       toast.error(error.response.data.message);
@@ -147,7 +171,10 @@ const Payment = () => {
             options={options}
           />
 
-          <input type="submit" value={` Pay  - $ ${orderInfo && orderInfo.totalPrice} `} />
+          <input
+            type="submit"
+            value={` Pay  - $ ${orderInfo && orderInfo.totalPrice} `}
+          />
         </form>
       </div>
     </>
