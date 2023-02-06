@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.5",
     "countries-list": "^2.6.1",
+    "mdbreact": "^5.2.0",
     "rc-slider": "^9.6.5",
     "react": "^18.2.0",
     "react-bootstrap": "^1.4.0",
