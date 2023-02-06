@@ -71,14 +71,7 @@ const User = () => {
                   </button>
                 </Link>
 
-                {/* <button className='box'>
-                  <AiOutlineHeart className='icon' />
-                  <h4>Wishlist</h4>
-                </button>
-                <button className='box'>
-                  <GrHelp className='icon' />
-                  <h4>Help</h4>
-                </button> */}
+
                 {user && user.role !== "admin" ? (
                   <Link to="/orders/me">
                     <button className="box">
