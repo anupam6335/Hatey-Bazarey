@@ -1,14 +1,8 @@
 import "./Footer.css";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { Loader } from "../allComponents";
 const Footer = () => {
-  const { loading } = useSelector((state) => state.products);
   return (
     <>
-      {loading ? (
-        <Loader />
-      ) : (
         <footer class="footer">
           <div class="waves">
             <div class="wave" id="wave1"></div>
@@ -51,7 +45,6 @@ const Footer = () => {
           <p style={{ opacity: "0.75" }}>Made with 🤍 by Anupam Debnath</p>
           <p>This is a project not a real website</p>
         </footer>
-      )}
     </>
   );
 };

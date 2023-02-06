@@ -32,7 +32,7 @@ const Login = () => {
       toast.error(error);
       dispatch(clearErrors());
     }
-  }, [dispatch, isAuthenticated, error]);
+  }, [dispatch, isAuthenticated,toast, error]);
 
   const submitHandler = (e) => {
     e.preventDefault();

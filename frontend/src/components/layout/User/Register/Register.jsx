@@ -40,7 +40,7 @@ const Register = () => {
       toast.error(error);
       dispatch(clearErrors());
     }
-  }, [dispatch, isAuthenticated, error]);
+  }, [dispatch, isAuthenticated, toast, error]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -73,7 +73,9 @@ const Register = () => {
   return (
     <>
       <MetaData title={"Register User"} />
-      <div className="LOGIN_BOX Register_BOX">
+      {loading ? (
+        <Loader />
+      ) : ( <div className="LOGIN_BOX Register_BOX">
         <form
           className="login register"
           onSubmit={submitHandler}
@@ -180,7 +182,8 @@ const Register = () => {
           />
           Your browser does not support the video please update the browser.
         </video>
-      </div>
+      </div>)}
+     
     </>
   );
 };

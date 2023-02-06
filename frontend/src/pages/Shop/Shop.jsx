@@ -41,7 +41,7 @@ const Shop = () => {
   const keyword = params.keyword;
   useEffect(() => {
     if (error) {
-      return toast.error(error);
+      toast.error(error);
     }
     dispatch(getProducts(keyword, currentPage, price, category, rating));
   }, [dispatch, error, toast, keyword, currentPage, price, category, rating]);

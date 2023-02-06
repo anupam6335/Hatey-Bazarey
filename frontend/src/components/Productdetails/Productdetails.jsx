@@ -24,7 +24,7 @@ const Productdetails = ({ match }) => {
     if (error) {
       toast.error(error);
     }
-  }, [dispatch, error, matchId]);
+  }, [dispatch, error, toast, matchId]);
 
   const increaseQty = () => {
     const count = document.querySelector(".count");

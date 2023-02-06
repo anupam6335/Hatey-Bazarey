@@ -89,7 +89,7 @@ function App() {
             <Route element={<Success />} path="/success" exact />
           </Route>
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
     </div>
   );
