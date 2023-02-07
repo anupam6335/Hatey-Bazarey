@@ -185,7 +185,8 @@ const Cart = () => {
                   
                   {cartItems.length === 0 ? '' : <button
                     type="button"
-                    className={`btn btn-lg btn-block checkoutCart`}
+                    className={`btns`}
+                    style={{marginLeft: '90px', background: '#104d1a', color: '#fff'}}
                     onClick={checkoutHandler}
                   >
                     Checkout

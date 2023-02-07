@@ -21,3 +21,4 @@ export {default as Shipping} from './layout/Card/Shipping/Shipping';
 export {default as ConfirmOrder} from './layout/Card/ConfirmOrder/ConfirmOrder';
 export {default as Payment} from './layout/Card/Payment/Payment';
 export {default as Success} from './layout/Card/Success/Success';
+export {default as ListReviews} from './Review/ListReviews';

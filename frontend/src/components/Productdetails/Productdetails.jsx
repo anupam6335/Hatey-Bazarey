@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { Loader } from "../allComponents";
+import { ListReviews, Loader } from "../allComponents";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -134,131 +134,180 @@ const Productdetails = ({ match }) => {
       {loading ? (
         <Loader />
       ) : (
-        <div id="prodetails" className="section__p1">
-          <div className="single__pro_image">
-            {product.images &&
-              product.images.map((image, idx) => (
-                <img
-                  key={idx}
-                  className="d-block"
-                  src={image.url}
-                  alt={product.title}
-                  style={{ width: "100%" }}
-                  id="MainImg"
-                />
-              ))}
-          </div>
+        <>
+          <div id="prodetails" className="section__p1">
+            <div className="single__pro_image">
+              {product.images &&
+                product.images.map((image, idx) => (
+                  <img
+                    key={idx}
+                    className="d-block"
+                    src={image.url}
+                    alt={product.title}
+                    style={{ width: "100%" }}
+                    id="MainImg"
+                  />
+                ))}
+            </div>
 
-          <div className="single__pro_details">
-            <h6>{product.seller} / T-Shirt</h6>
-            <h4>{product.name}</h4>
-            <div className="star ratings" style={{ marginTop: "-10px" }}>
-              <div className="rating-outer">
-                <div
-                  className="rating-inner"
-                  style={{ width: `${(product.ratings / 5) * 100}%` }}
-                ></div>
+            <div className="single__pro_details">
+              <h6>{product.seller} / T-Shirt</h6>
+              <h4>{product.name}</h4>
+              <div className="star ratings" style={{ marginTop: "-10px" }}>
+                <div className="rating-outer">
+                  <div
+                    className="rating-inner"
+                    style={{ width: `${(product.ratings / 5) * 100}%` }}
+                  ></div>
+                </div>
+                <span id="no_of_reviews">({product.numOfReviews} review)</span>
               </div>
-              <span id="no_of_reviews">({product.numOfReviews} review)</span>
-            </div>
 
-            <h2>${product.price}</h2>
+              <h2>${product.price}</h2>
 
-            <div className="stockCounter d-inline">
-              <span
-                className="btn btn-danger minus"
-                onClick={decreaseQty}
-                style={{ fontSize: "30px" }}
+              <div className="stockCounter d-inline">
+                <span
+                  className="btn btn-danger minus"
+                  onClick={decreaseQty}
+                  style={{ fontSize: "30px" }}
+                >
+                  -
+                </span>
+
+                <input
+                  type="number"
+                  className="form-control count d-inline"
+                  value={quantity}
+                  style={{ width: "56px", marginLeft: "10px" }}
+                  readOnly
+                />
+
+                <span
+                  className="btn btn-primary plus"
+                  onClick={increaseQty}
+                  style={{ marginRight: "10px", fontSize: "30px" }}
+                >
+                  +
+                </span>
+              </div>
+
+              <button
+                className={product.stock === 0 ? "disableBtn" : "btns"}
+                disabled={product.stock === 0}
+                onClick={addToCart}
               >
-                -
-              </span>
+                {product.stock === 0 ? "comming soon" : "Add To Cart"}
+              </button>
+              <h4>Product Details</h4>
+              <span>{product.description}</span>
+              <p style={{ marginTop: "20px" }}>
+                Status:{" "}
+                <strong
+                  className={product.stock > 0 ? "greenColor" : "redColor"}
+                >
+                  {product.stock > 0 ? "In Stock" : "Out of Stock"}{" "}
+                </strong>
+              </p>
 
-              <input
-                type="number"
-                className="form-control count d-inline"
-                value={quantity}
-                style={{ width: "56px", marginLeft: "10px" }}
-                readOnly
-              />
+              {product.stock <= 0 ? (
+                <div className="alert alert-danger mt-5" type="alert">
+                  currently out of stock you cant post review
+                </div>
+              ) : (
+                <>
+                  {user ? (
+                    <button
+                      id="review_btn"
+                      type="button"
+                      className="btns"
+                      data-toggle="modal"
+                      data-target="#ratingModal"
+                      onClick={setUserRatings}
+                    >
+                      Submit Your Review
+                    </button>
+                  ) : (
+                    <div className="alert alert-danger mt-5" type="alert" style={{width: '250px'}}>
+                    <Link to='/login' style={{fontWeight: 'bold', textDecoration: 'none', color: '#000'}}>Login to post your review.</Link>
+                      
+                    </div>
+                  )}
+                </>
+              )}
 
-              <span
-                className="btn btn-primary plus"
-                onClick={increaseQty}
-                style={{ marginRight: "10px", fontSize: "30px" }}
-              >
-                +
-              </span>
+              <div className="row mt-2 mb-5">
+                <div className="myrating w-50">
+                  <div
+                    className="modal fade"
+                    id="ratingModal"
+                    tabIndex="-1"
+                    role="dialog"
+                    aria-labelledby="ratingModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div className="modal-dialog" role="document">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h5 className="modal-title" id="ratingModalLabel">
+                            Submit Review
+                          </h5>
+                          <button
+                            type="button"
+                            className="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div className="modal-body">
+                          <ul className="stars">
+                            <li className="mystar">
+                              <i className="fa fa-star"></i>
+                            </li>
+                            <li className="mystar">
+                              <i className="fa fa-star"></i>
+                            </li>
+                            <li className="mystar">
+                              <i className="fa fa-star"></i>
+                            </li>
+                            <li className="mystar">
+                              <i className="fa fa-star"></i>
+                            </li>
+                            <li className="mystar">
+                              <i className="fa fa-star"></i>
+                            </li>
+                          </ul>
+
+                          <textarea
+                            name="review"
+                            id="review"
+                            className="form-control mt-3"
+                            value={comment}
+                            onChange={(e) => setComment(e.target.value)}
+                          ></textarea>
+
+                          <button
+                            className="btn my-3 float-right review-btn px-4 text-white"
+                            onClick={reviewHandler}
+                            data-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            Submit
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <button
-              className={product.stock === 0 ? "disableBtn" : "btn"}
-              disabled={product.stock === 0}
-              onClick={addToCart}
-            >
-              {product.stock === 0 ? "comming soon" : "Add To Cart"}
-            </button>
-            <h4>Product Details</h4>
-            <span>{product.description}</span>
-            <p style={{ marginTop: "20px" }}>
-              Status:{" "}
-              <strong className={product.stock > 0 ? "greenColor" : "redColor"}>
-                {product.stock > 0 ? "In Stock" : "Out of Stock"}{" "}
-              </strong>
-            </p>
-
-             {product.stock <= 0  ?  <div className="alert alert-danger mt-5" type='alert'>currently out of stock you cant post review</div> : <>     
-
-            {user ? <button id="review_btn" type="button" className="btn btn-primary mt-4" data-toggle="modal" data-target="#ratingModal" onClick={setUserRatings}>
-                                Submit Your Review
-                            </button>
-                                :
-                                <div className="alert alert-danger mt-5" type='alert'>Login to post your review.</div>
-                            }
-                            </>
-                          }
-
-
-                            <div className="row mt-2 mb-5">
-                                <div className="myrating w-50">
-
-                                    <div className="modal fade" id="ratingModal" tabIndex="-1" role="dialog" aria-labelledby="ratingModalLabel" aria-hidden="true">
-                                        <div className="modal-dialog" role="document">
-                                            <div className="modal-content">
-                                                <div className="modal-header">
-                                                    <h5 className="modal-title" id="ratingModalLabel">Submit Review</h5>
-                                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div className="modal-body">
-
-                                                    <ul className="stars" >
-                                                        <li className="mystar"><i className="fa fa-star"></i></li>
-                                                        <li className="mystar"><i className="fa fa-star"></i></li>
-                                                        <li className="mystar"><i className="fa fa-star"></i></li>
-                                                        <li className="mystar"><i className="fa fa-star"></i></li>
-                                                        <li className="mystar"><i className="fa fa-star"></i></li>
-                                                    </ul>
-
-                                                    <textarea
-                                                        name="review"
-                                                        id="review" className="form-control mt-3"
-                                                        value={comment}
-                                                        onChange={(e) => setComment(e.target.value)}
-                                                    >
-
-                                                    </textarea>
-
-                                                    <button className="btn my-3 float-right review-btn px-4 text-white" onClick={reviewHandler} data-dismiss="modal" aria-label="Close">Submit</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
           </div>
-        </div>
+
+          {product.reviews && product.reviews.length > 0 && (
+            <ListReviews reviews={product.reviews} />
+          )}
+        </>
       )}
     </>
   );
