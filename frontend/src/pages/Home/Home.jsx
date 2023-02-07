@@ -14,6 +14,7 @@ import { toast } from "react-hot-toast";
 import "./Featureproduct.css";
 import "./Home.css";
 import { useParams } from "react-router-dom";
+import Smallbanner from "../../components/layout/Smallbanner";
 
 const { createSliderWithTooltip } = Slider;
 const Range = createSliderWithTooltip(Slider.Range);
@@ -124,18 +125,11 @@ const Home = () => {
               </div>
 
               <div id="product1" className="section__p1 view__product_search">
-                <h2 className="title_for_trending_and_search">
+                <h2 className="title_for_trending_and_search" style={{color: 'grey'}}>
                   {keyword
                     ? `${keyword.toLocaleUpperCase()}`
                     : "Best sellers"}
                 </h2>
-                <p>
-                  {/* {!keyword && currentPage === 3 && "Fresh Fruits"}
-                  {!keyword &&
-                    currentPage === 1 &&
-                    "Summer Collection New Modern Design"}
-                  {!keyword && currentPage === 2 && "Our Electronics Product"} */}
-                </p>
                 <div to="/products" className="view__product view__product_1">
                   <div className="pro__container">
                     {products &&
@@ -148,17 +142,12 @@ const Home = () => {
             </div>
           ) : (
             <div id="product1" className="section__p1">
-              <h2>
+              <h2 style={{color: 'grey'}}>
                 {keyword
                   ? `${keyword.toLocaleUpperCase()}`
                   : "Best sellers"}
               </h2>
               <p>
-                {/* {!keyword && currentPage === 3 && "Fresh Fruits"}
-                {!keyword &&
-                  currentPage === 1 &&
-                  "Summer Collection New Modern Design"}
-                {!keyword && currentPage === 2 && "Our Electronics Product"} */}
               </p>
               <div to="/products" className="view__product">
                 <div className="pro__container">
@@ -171,22 +160,6 @@ const Home = () => {
             </div>
           )}
 
-          {/* <div id="product1" className="section__p1">
-            <h2>{keyword ? `${keyword.toLocaleUpperCase()}`: 'Trending Products'}</h2>
-            <p>
-              {!keyword && currentPage === 3 && "Fresh Fruits"}
-              {!keyword && currentPage === 1 && "Summer Collection New Modern Design"}
-              {!keyword && currentPage === 2 && "Our Electronics Product"}
-            </p>
-            <div to="/products" className="view__product">
-              <div className="pro__container">
-                {products &&
-                  products.map((product) => (
-                    <Product key={product._id} product={product} />
-                  ))}
-              </div>
-            </div>
-          </div> */}
 
           {resPerPage <= count && (
             <div className="d-flex justify-content-center mt-5">
@@ -204,6 +177,8 @@ const Home = () => {
               />
             </div>
           )}
+
+          <Smallbanner/>
         </>
       )}
     </>
