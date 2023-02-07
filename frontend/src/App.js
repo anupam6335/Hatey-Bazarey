@@ -20,7 +20,7 @@ import {
   Payment,
   Success,
 } from "./components/allComponents";
-import { Home, ListOrders, Shop } from "./pages/allpages";
+import { Home, ListOrders, OrderDetails, Shop } from "./pages/allpages";
 import { Toaster } from "react-hot-toast";
 
 import { loadUser } from "./actions/userActions";
@@ -88,6 +88,7 @@ function App() {
             )}
             <Route element={<Success />} path="/success" exact />
             <Route element={<ListOrders />} path="/orders/me" exact />
+            <Route element={<OrderDetails />} path="/order/:id" exact />
           </Route>
         </Routes>
         {/* <Footer /> */}

@@ -1,3 +1,29 @@
 .per__order {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
+
+.order__details__container {
+    margin: 20px;
+}
+
+.shipping__info_order__details {
+    padding: 20px;
+}
+
+.order__details_status {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.order__details_payment, .order__details_status_sec {
+    margin-right: 20px;
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart__item_order__details {
+    padding: 20px;
+}
