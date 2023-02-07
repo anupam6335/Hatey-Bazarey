@@ -75,7 +75,7 @@ const Cart = () => {
 
                           <div className="col-lg-5 col-md-6 mb-4 mb-lg-0 d-flex justify-content-around align-content-center">
                             {/* <!-- Data --> */}
-                            <Link to={`/product/${item.product}`}>
+                            <Link to={`/product/${item.product}`} style={{textDecoration: 'none'}}>
                               <p>
                                 <strong className="itemNameCart">{item.name}</strong>
                               </p>

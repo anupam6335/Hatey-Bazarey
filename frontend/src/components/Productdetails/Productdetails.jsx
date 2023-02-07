@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
-import { ListReviews, Loader } from "../allComponents";
+import { ListReviews, Loader, Product } from "../allComponents";
+import { getProducts } from "../../actions/productActions";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -15,7 +16,6 @@ import { addItemToCart } from "../../actions/cartActions";
 import { NEW_REVIEW_RESET } from "../../constants/productConstants";
 
 import "./Productdetails.css";
-
 const Productdetails = ({ match }) => {
   const [quantity, setQuantity] = useState(1);
   const [rating, setRating] = useState(0);
@@ -25,6 +25,7 @@ const Productdetails = ({ match }) => {
   const matchId = useParams();
 
   const { user } = useSelector((state) => state.auth);
+  const { products } = useSelector((state) => state.products);
   const { loading, error, product } = useSelector(
     (state) => state.productDetails
   );
@@ -34,6 +35,7 @@ const Productdetails = ({ match }) => {
 
   useEffect(() => {
     dispatch(getProductDetails(matchId.id));
+    dispatch(getProducts());
     if (error) {
       toast.error(error);
     }
@@ -127,7 +129,9 @@ const Productdetails = ({ match }) => {
     dispatch(addItemToCart(matchId.id, quantity));
     toast.success("Item Added to Cart");
   };
-  console.log(rating);
+
+  const currentProductCatergory = product.category;
+
   return (
     <>
       <MetaData title={`${product.name}`} />
@@ -167,7 +171,7 @@ const Productdetails = ({ match }) => {
 
               <div className="stockCounter d-inline">
                 <span
-                  className="btn btn-danger minus"
+                  className="btns btn-danger minus"
                   onClick={decreaseQty}
                   style={{ fontSize: "30px" }}
                 >
@@ -183,7 +187,7 @@ const Productdetails = ({ match }) => {
                 />
 
                 <span
-                  className="btn btn-primary plus"
+                  className="btns btn-success plus"
                   onClick={increaseQty}
                   style={{ marginRight: "10px", fontSize: "30px" }}
                 >
@@ -227,9 +231,21 @@ const Productdetails = ({ match }) => {
                       Submit Your Review
                     </button>
                   ) : (
-                    <div className="alert alert-danger mt-5" type="alert" style={{width: '250px'}}>
-                    <Link to='/login' style={{fontWeight: 'bold', textDecoration: 'none', color: '#000'}}>Login to post your review.</Link>
-                      
+                    <div
+                      className="alert alert-danger mt-5"
+                      type="alert"
+                      style={{ width: "250px" }}
+                    >
+                      <Link
+                        to="/login"
+                        style={{
+                          fontWeight: "bold",
+                          textDecoration: "none",
+                          color: "#000",
+                        }}
+                      >
+                        Login to post your review.
+                      </Link>
                     </div>
                   )}
                 </>
@@ -304,9 +320,52 @@ const Productdetails = ({ match }) => {
             </div>
           </div>
 
-          {product.reviews && product.reviews.length > 0 && (
-            <ListReviews reviews={product.reviews} />
-          )}
+          <div className="combined__box_review_recoProduct">
+            <div className="reviewBox">
+              {" "}
+              {product.reviews && product.reviews.length > 0 && (
+                <ListReviews reviews={product.reviews} />
+              )}
+            </div>
+
+            <div className="whole_reco_box">
+            <h3>Similar products</h3>
+              <div className="recomended_products">
+                {products.map((product) => (
+                  <>
+                    {product.category === currentProductCatergory &&
+                      matchId.id !== product._id && (
+                        <div className="shop__pro_recom">
+                          <Link
+                            to={`/product/${product._id}`}
+                            style={{ textDecoration: "none", color: "black" }}
+                          >
+                            <img src={product.images[0].url} alt="" />
+                            <div className="shop__des_reco">
+                              <h5 style={{fontSize:'15px'}}>{product.name}</h5>
+                              <div className="star ratings">
+                                <div className="rating-outer">
+                                  <div
+                                    className="rating-inner"
+                                    style={{
+                                      width: `${(product.ratings / 5) * 100}%`,
+                                    }}
+                                  ></div>
+                                </div>
+                                <span id="no_of_reviews">
+                                  ({product.numOfReviews} review)
+                                </span>
+                              </div>
+                              <h4 style={{fontSize: '20px'}}>${product.price}</h4>
+                            </div>
+                          </Link>
+                        </div>
+                      )}
+                  </>
+                ))}
+              </div>
+            </div>
+          </div>
         </>
       )}
     </>

@@ -180,3 +180,56 @@ textarea:focus {
   font-size: 0.8rem;
   color: grey;
 }
+
+.combined__box_review_recoProduct {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.reviewBox {
+  width: 60%;
+
+}
+.whole_reco_box {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.whole_reco_box > h3{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.recomended_products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+.shop__pro_recom {
+ display: flex;
+ align-items: center;
+ padding: 20px;
+ margin-left: 20px;
+ width: 250px;
+ margin-right: 20px;
+ box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+ overflow-x: scroll;
+}
+
+.shop__pro_recom img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.shop__des_reco {
+  text-align: center;
+}
