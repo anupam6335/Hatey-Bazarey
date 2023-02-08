@@ -1,0 +1,48 @@
+# Hatey-Bazarey-MERN
+Full-Stack Ecommerce with Admin Dashboard & stripe Payment Gateway.
+
+[Visit Now](website Live URL) 🚀
+
+## 🖥️ Tech Stack
+**Frontend:**
+
+![reactjs](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)&nbsp;
+![react-router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)&nbsp;
+![redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)&nbsp;
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)&nbsp;
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)&nbsp;
+
+
+**Backend:**
+
+![nodejs](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)&nbsp;
+![expressjs](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)&nbsp;
+![mongodb](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)&nbsp;
+![jwt](	https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)&nbsp;
+
+**Payment Gateway:**
+
+![Stripe](https://img.shields.io/badge/Stripe-626CD9?style=for-the-badge&logo=Stripe&logoColor=white)
+
+**Deployed On:**
+
+![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
+
+**Image Management:** [Cloudinary](https://cloudinary.com/)
+**Mail Service:** [mailtrap](https://mailtrap.io/)
+
+
+## 🚀 Features
+- Login/Signup User Account
+- Update Profile/Password User Account
+- Reset Password Mail using mailtrap
+- Cart Add/Remove Items | Update Quantities
+- Products Pagination (Default 8 Products Per Page)
+- Product Search
+- Product Filters Based on Category, Ratings
+- Shipping Info in Session Storage
+- My Orders (With All Filters)
+- Order Details of All Ordered Item
+- Review Products User Account
+- Admin: Dashboard access to only admin roles
+- Admin: Add/Update Products
