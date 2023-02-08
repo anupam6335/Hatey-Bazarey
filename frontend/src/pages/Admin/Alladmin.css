@@ -1,0 +1,56 @@
+#sidebar {
+    padding: 20px;
+    /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
+}
+
+.products__admin {
+    color: #000;
+}
+
+.single__link_admin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}   
+
+.single__link_admin:hover {
+    background: rgb(240, 206, 206);
+    box-shadow: none;
+}
+
+
+
+
+.dashboard__total_amount {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    background-color: #00d2fc;
+   border: none;
+    border-radius: 20px;
+    cursor: auto;
+}
+
+.card__admin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 20px;
+    transition: box-shadow .1s ease-in;
+}
+
+.card__admin:hover {
+    box-shadow: none;
+}
+
+.card-footer {
+    margin-right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.collapse__admin:hover {
+    background: #ff4bf6;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
