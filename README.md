@@ -35,12 +35,14 @@ Full-Stack Ecommerce with Admin Dashboard & stripe Payment Gateway.
 ## 🚀 Features
 - Login/Signup User Account
 - Update Profile/Password User Account
-- Reset Password Mail using mailtrap
+- Reset Password Mail using Mailtrap
+- User can view Single Product
 - Cart Add/Remove Items | Update Quantities
 - Products Pagination (Default 8 Products Per Page)
 - Product Search
 - Product Filters Based on Category, Ratings
 - Shipping Info in Session Storage
+- Before payment user passes 3 steps Shipping Address | Confirm Order | Card Details
 - My Orders (With All Filters)
 - Order Details of All Ordered Item
 - Review Products User Account

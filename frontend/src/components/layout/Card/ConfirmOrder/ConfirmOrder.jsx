@@ -107,7 +107,7 @@ const ConfirmOrder = () => {
             <hr />
             <button
               id="checkout_btn"
-              className="btn btn-primary btn-block"
+              className="btns "
               onClick={processToPayment}
             >
               Proceed to Payment

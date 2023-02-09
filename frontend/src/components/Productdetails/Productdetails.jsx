@@ -155,7 +155,7 @@ const Productdetails = ({ match }) => {
             </div>
 
             <div className="single__pro_details">
-              <h6>{product.seller} / T-Shirt</h6>
+              <h6>{product.seller} / {product.category}</h6>
               <h4>{product.name}</h4>
               <div className="star ratings" style={{ marginTop: "-10px" }}>
                 <div className="rating-outer">
@@ -335,7 +335,7 @@ const Productdetails = ({ match }) => {
                   <>
                     {product.category === currentProductCatergory &&
                       matchId.id !== product._id && (
-                        <div className="shop__pro_recom">
+                        <div className="shop__pro_recom" style={{marginTop: '15px'}}>
                           <Link
                             to={`/product/${product._id}`}
                             style={{ textDecoration: "none", color: "black" }}
