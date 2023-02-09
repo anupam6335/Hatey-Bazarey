@@ -7,3 +7,4 @@ export{default as Dashboard} from '../pages/Admin/Dashboard';
 export {default as Sidebar} from '../pages/Admin/Sidebar';
 export {default as ProductsList} from '../pages/Admin/ProductsList';
 export {default as NewProduct} from '../pages/Admin/NewProduct';
+export {default as UpdateProduct} from '../pages/Admin/UpdateProduct';
