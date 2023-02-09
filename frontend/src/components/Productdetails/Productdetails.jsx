@@ -181,7 +181,7 @@ const Productdetails = ({ match }) => {
                 <input
                   type="number"
                   className="form-control count d-inline"
-                  value={quantity}
+                  value={product.stock === 0 ? 0 : quantity}
                   style={{ width: "56px", marginLeft: "10px" }}
                   readOnly
                 />

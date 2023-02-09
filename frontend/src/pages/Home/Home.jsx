@@ -130,7 +130,7 @@ const Home = () => {
                     ? `${keyword.toLocaleUpperCase()}`
                     : "Best sellers"}
                 </h2>
-                <div to="/products" className="view__product view__product_1">
+                <div to="/products" className="view__product view__product_1" style={{marginTop: '20px'}}>
                   <div className="pro__container">
                     {products &&
                       products.map((product) => (
@@ -149,7 +149,7 @@ const Home = () => {
               </h2>
               <p>
               </p>
-              <div to="/products" className="view__product">
+              <div to="/products" className="view__product" style={{marginTop: '20px'}}>
                 <div className="pro__container">
                   {products &&
                     products.map((product) => (

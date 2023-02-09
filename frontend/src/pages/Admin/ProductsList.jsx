@@ -7,7 +7,8 @@ import Sidebar from './Sidebar'
 
 import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux'
-import { getAdminProducts, clearErrors } from '../../actions/productActions'
+import { getAdminProducts, clearErrors, deleteProduct } from '../../actions/productActions'
+import { DELETE_PRODUCT_RESET } from '../../constants/productConstants'
 
 
 const ProductsList = () => {
@@ -17,7 +18,7 @@ const ProductsList = () => {
     const dispatch = useDispatch();
 
     const { loading, error, products } = useSelector(state => state.products);
-    // const { error: deleteError, isDeleted } = useSelector(state => state.product)
+    const { error: deleteError, isDeleted } = useSelector(state => state.product)
 
     useEffect(() => {
         dispatch(getAdminProducts());
@@ -27,7 +28,18 @@ const ProductsList = () => {
             dispatch(clearErrors())
         }
 
-    }, [dispatch, toast, error, match])
+        if (deleteError) {
+            toast.error(deleteError);
+            dispatch(clearErrors())
+        }
+
+        if (isDeleted) {
+            toast.success('Product deleted successfully');
+            navigate('/admin/products');
+            dispatch({ type: DELETE_PRODUCT_RESET })
+        }
+
+    }, [dispatch, toast, error, deleteError, isDeleted, match])
 
     const setProducts = () => {
         const data = {
@@ -70,7 +82,7 @@ const ProductsList = () => {
                     <Link to={`/admin/product/${product._id}`} className="btns btn-primary py-1 px-2">
                         <i className="fa fa-pencil"></i>
                     </Link>
-                    <button className="btns btn-danger py-1 px-2 ml-2" >
+                    <button className="btns btn-danger py-1 px-2 ml-2"  onClick={() => deleteProductHandler(product._id)}>
                         <i className="fa fa-trash"></i>
                     </button>
                 </>
@@ -79,6 +91,11 @@ const ProductsList = () => {
 
         return data;
     }
+
+    const deleteProductHandler = (id) => {
+        dispatch(deleteProduct(id))
+    }
+
 
     return (
         <>

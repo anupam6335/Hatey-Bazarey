@@ -19,7 +19,7 @@ const Banner = () => {
                 src="https://res.cloudinary.com/hateybazarey/image/upload/v1674741172/products/headphone_with_girl_geyvtd.webp"
                 alt=" main banner"
               />
-               <Link to={`/product/63d7c0ac7380ec1467dc131e`} className='view__product_bose'>
+               <Link to={`/product/63e44c993b623af4c66b1858`} className='view__product_bose'>
                 <BiShoppingBag className="cardIcon"  />
                 {/* view product */}
               </Link>
