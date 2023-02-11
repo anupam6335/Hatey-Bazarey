@@ -1,7 +1,7 @@
 # Hatey-Bazarey-MERN
 Full-Stack Ecommerce with Admin Dashboard & stripe Payment Gateway.
 
-[Visit Now](website Live URL) 🚀
+[Visit Now](https://hateybazarey.onrender.com) 🚀
 
 ## 🖥️ Tech Stack
 **Frontend:**
