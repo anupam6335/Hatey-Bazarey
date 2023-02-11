@@ -61,6 +61,12 @@ margin-top: -3rem !important;
 margin-left: -30rem;
 
 }
+.wrapper__admin_userUpdate {
+width: 150rem;
+margin-top: -3rem !important;
+/* margin-left: 20rem; */
+
+}
 
 .wrapper__admin_form {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px !important;

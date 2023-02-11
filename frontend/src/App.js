@@ -20,7 +20,7 @@ import {
   Payment,
   Success,
 } from "./components/allComponents";
-import { Dashboard, Home, ListOrders, NewProduct, OrderDetails, OrdersList, ProcessOrder, ProductsList, Shop, UpdateProduct, UsersList } from "./pages/allpages";
+import { Dashboard, Home, ListOrders, NewProduct, OrderDetails, OrdersList, ProcessOrder, ProductsList, Shop, UpdateProduct, UpdateUser, UsersList } from "./pages/allpages";
 import { Toaster } from "react-hot-toast";
 
 import { loadUser } from "./actions/userActions";
@@ -97,6 +97,7 @@ function App() {
             <Route element={<OrdersList/>} path='/admin/orders' exact/>
             <Route element={<ProcessOrder/>} path='/admin/order/:id' exact/>
             <Route element={<UsersList/>} path='/admin/users' exact/>
+            <Route element={<UpdateUser />} path='/admin/user/:id' exact/>
           </Route>
         </Routes>
         {/* <Footer /> */}
