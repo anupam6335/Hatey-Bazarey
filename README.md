@@ -1,6 +1,7 @@
 # Hatey-Bazarey-MERN
 Full-Stack Ecommerce with Admin Dashboard & stripe Payment Gateway.
 
+## Demo
 [This application is deployed on Render Please check it out : 😀 smile](https://hateybazarey.onrender.com) 
 
 ## 🖥️ Tech Stack
