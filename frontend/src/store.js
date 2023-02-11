@@ -6,24 +6,34 @@ import {
   newProductReducer,
   productReducer,
   productDetailsReducer,
-  newReviewReducer
+  newReviewReducer,
+  productReviewsReducer,
+  reviewReducer,
 } from "./reducers/productReducers";
 import {
   authReducer,
   userReducer,
   forgotPasswordReducer,
   allUsersReducer,
-  userDetailsReducer
+  userDetailsReducer,
 } from "./reducers/userReducers";
 import { cartReducer } from "./reducers/cartReducers";
 
-import {newOrderReducer, myOrdersReducer, allOrdersReducer, orderDetailsReducer, orderReducer } from './reducers/orderReducers';
+import {
+  newOrderReducer,
+  myOrdersReducer,
+  allOrdersReducer,
+  orderDetailsReducer,
+  orderReducer,
+} from "./reducers/orderReducers";
 
 const reducer = combineReducers({
   products: productsReducer,
   productDetails: productDetailsReducer,
   newProduct: newProductReducer,
   product: productReducer,
+  productReviews: productReviewsReducer,
+  review: reviewReducer,
   auth: authReducer,
   user: userReducer,
   allUsers: allUsersReducer,
@@ -43,9 +53,9 @@ let initialState = {
     cartItems: localStorage.getItem("cartItems")
       ? JSON.parse(localStorage.getItem("cartItems"))
       : [],
-      shippingInfo: localStorage.getItem('shippingInfo')
-      ? JSON.parse(localStorage.getItem('shippingInfo'))
-      : {}
+    shippingInfo: localStorage.getItem("shippingInfo")
+      ? JSON.parse(localStorage.getItem("shippingInfo"))
+      : {},
   },
 };
 

@@ -20,7 +20,21 @@ import {
   Payment,
   Success,
 } from "./components/allComponents";
-import { Dashboard, Home, ListOrders, NewProduct, OrderDetails, OrdersList, ProcessOrder, ProductsList, Shop, UpdateProduct, UpdateUser, UsersList } from "./pages/allpages";
+import {
+  Dashboard,
+  Home,
+  ListOrders,
+  NewProduct,
+  OrderDetails,
+  OrdersList,
+  ProcessOrder,
+  ProductReviews,
+  ProductsList,
+  Shop,
+  UpdateProduct,
+  UpdateUser,
+  UsersList,
+} from "./pages/allpages";
 import { Toaster } from "react-hot-toast";
 
 import { loadUser } from "./actions/userActions";
@@ -74,13 +88,13 @@ function App() {
             <Route element={<UpdatePassword />} path="/password/update" exact />
             <Route element={<Shipping />} path="/shipping" exact />
             <Route element={<ConfirmOrder />} path="/order/confirm" exact />
-            
+
             {stripeApiKey && (
               <Route
                 element={
-                  <Elements stripe={loadStripe(stripeApiKey)} >
+                  <Elements stripe={loadStripe(stripeApiKey)}>
                     {/* <Route element={<Payment />} path="/payment" exact /> */}
-                    <Payment/>
+                    <Payment />
                   </Elements>
                 }
                 path="/payment"
@@ -90,14 +104,19 @@ function App() {
             <Route element={<ListOrders />} path="/orders/me" exact />
             <Route element={<OrderDetails />} path="/order/:id" exact />
 
-            <Route element={<Dashboard/>} path='dashboard' exact/>
-            <Route element={<ProductsList/>} path='admin/products' exact/>
-            <Route element={<NewProduct/>} path='admin/product' exact/>
-            <Route element={<UpdateProduct/>} path='/admin/product/:id' exact/>
-            <Route element={<OrdersList/>} path='/admin/orders' exact/>
-            <Route element={<ProcessOrder/>} path='/admin/order/:id' exact/>
-            <Route element={<UsersList/>} path='/admin/users' exact/>
-            <Route element={<UpdateUser />} path='/admin/user/:id' exact/>
+            <Route element={<Dashboard />} path="dashboard" exact />
+            <Route element={<ProductsList />} path="admin/products" exact />
+            <Route element={<NewProduct />} path="admin/product" exact />
+            <Route
+              element={<UpdateProduct />}
+              path="/admin/product/:id"
+              exact
+            />
+            <Route element={<OrdersList />} path="/admin/orders" exact />
+            <Route element={<ProcessOrder />} path="/admin/order/:id" exact />
+            <Route element={<UsersList />} path="/admin/users" exact />
+            <Route element={<UpdateUser />} path="/admin/user/:id" exact />
+            <Route element={<ProductReviews />} path="/admin/reviews" exact />
           </Route>
         </Routes>
         {/* <Footer /> */}

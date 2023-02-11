@@ -12,3 +12,4 @@ export {default as OrdersList} from '../pages/Admin/OrdersList';
 export {default as ProcessOrder} from '../pages/Admin/ProcessOrder';
 export {default as UsersList} from '../pages/Admin/UsersList';
 export {default as UpdateUser} from '../pages/Admin/UpdateUser';
+export {default as ProductReviews} from '../pages/Admin/ProductReviews';
