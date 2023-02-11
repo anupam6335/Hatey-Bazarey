@@ -7,13 +7,16 @@ import Sidebar from "./Sidebar";
 
 import { Toast, toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import { allUsers, clearErrors } from "../../actions/userActions";
+import { allUsers, clearErrors, deleteUser } from "../../actions/userActions";
+import { DELETE_USER_RESET } from '../../constants/userConstants'
+
 
 const UsersList = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const { loading, error, users } = useSelector((state) => state.allUsers);
+  const { isDeleted } = useSelector(state => state.user)
 
   useEffect(() => {
     dispatch(allUsers());
@@ -22,7 +25,18 @@ const UsersList = () => {
       toast.error(error);
       dispatch(clearErrors());
     }
-  }, [dispatch, alert, toast, navigate]);
+
+    if (isDeleted) {
+      toast.success('User deleted successfully');
+      navigate('/admin/users');
+      dispatch({ type: DELETE_USER_RESET })
+  }
+  }, [dispatch, isDeleted, toast, navigate]);
+
+  const deleteUserHandler = (id) => {
+    dispatch(deleteUser(id))
+}
+
 
   const setUsers = () => {
     const data = {
@@ -70,7 +84,7 @@ const UsersList = () => {
             >
               <i className="fa fa-pencil"></i>
             </Link>
-            <button className="btns btn-danger py-1 px-2 ml-2">
+            <button className="btns btn-danger py-1 px-2 ml-2" onClick={() => deleteUserHandler(user._id)}>
               <i className="fa fa-trash"></i>
             </button>
           </>
