@@ -1,7 +1,11 @@
 # Hatey-Bazarey-MERN
 Full-Stack Ecommerce with Admin Dashboard & stripe Payment Gateway.
 
+<<<<<<< HEAD
 [This application is deployed on Render Please check it out : 😀 smile](https://hateybazarey.onrender.com) 🚀
+=======
+[Visit Now](https://hateybazarey.onrender.com) 🚀
+>>>>>>> 37877d3ba211755e1725cbf42315ee31451f3895
 
 ## 🖥️ Tech Stack
 **Frontend:**
@@ -49,6 +53,7 @@ Full-Stack Ecommerce with Admin Dashboard & stripe Payment Gateway.
 - Review Products User Account
 - Admin: Dashboard access to only admin roles
 - Admin: Add/Update Products
+<<<<<<< HEAD
 
 
 ## Database Seed
@@ -59,3 +64,5 @@ Full-Stack Ecommerce with Admin Dashboard & stripe Payment Gateway.
 ```
 npm run seed
 ```
+=======
+>>>>>>> 37877d3ba211755e1725cbf42315ee31451f3895
