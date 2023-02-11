@@ -6,7 +6,9 @@ import { MetaData, Loader } from "../../components/allComponents";
 import Sidebar from "./Sidebar";
 
 import { useDispatch, useSelector } from "react-redux";
-import { allOrders, clearErrors } from "../../actions/orderActions";
+import { allOrders, clearErrors, deleteOrder } from "../../actions/orderActions";
+import { DELETE_ORDER_RESET } from "../../constants/orderConstants";
+
 import { toast } from "react-hot-toast";
 
 const OrdersList = () => {
@@ -14,6 +16,7 @@ const OrdersList = () => {
   const dispatch = useDispatch();
 
   const { loading, error, orders } = useSelector((state) => state.allOrders);
+  const { isDeleted } = useSelector((state) => state.order);
 
   useEffect(() => {
     dispatch(allOrders());
@@ -22,7 +25,17 @@ const OrdersList = () => {
       toast.error(error);
       dispatch(clearErrors());
     }
-  }, [dispatch, toast, error, navigate]);
+
+    if (isDeleted) {
+      toast.success("Order deleted successfully");
+      navigate("/admin/orders");
+      dispatch({ type: DELETE_ORDER_RESET });
+    }
+  }, [dispatch, toast, error, isDeleted, navigate]);
+
+  const deleteOrderHandler = (id) => {
+    dispatch(deleteOrder(id));
+  };
 
   const setOrders = () => {
     const data = {
@@ -75,7 +88,7 @@ const OrdersList = () => {
             >
               <i className="fa fa-eye"></i>
             </Link>
-            <button className="btns btn-danger py-1 px-2 ml-2">
+            <button className="btns btn-danger py-1 px-2 ml-2"  onClick={() => deleteOrderHandler(order._id)}>
               <i className="fa fa-trash"></i>
             </button>
           </>
