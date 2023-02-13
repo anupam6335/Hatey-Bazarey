@@ -68,10 +68,10 @@ npm run seed
 
 <table>
   <tr>
-    <td><img src="assets/1.png" /></td>
-    <td><img src="assets/2.png" alt="mockups" /></td>
+    <td><img src="https://user-images.githubusercontent.com/65649115/218567761-fbeda72a-754e-4d28-ae08-c83f9360485e.png" /></td>
+    <td><img src="https://user-images.githubusercontent.com/65649115/218567770-f7e98ad8-bdfa-4552-ab08-effcf3c95643.png" alt="mockups" /></td>
   </tr>
   <tr>
-    <td><img src="assets/3.png" /></td>
+    <td><img src="https://user-images.githubusercontent.com/65649115/218567774-c4036d4c-12c6-400d-b278-c243b600c700.png" /></td>
   </tr>
 </table>
