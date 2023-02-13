@@ -33,6 +33,8 @@ Full-Stack Ecommerce with Admin Dashboard & stripe Payment Gateway.
 **Mail Service:** [mailtrap](https://mailtrap.io/)
 
 
+
+
 ## 🚀 Features
 - custom title on each page
 - Login/Signup User Account
@@ -61,3 +63,15 @@ Full-Stack Ecommerce with Admin Dashboard & stripe Payment Gateway.
 ```
 npm run seed
 ```
+
+# Speed checking
+
+<table>
+  <tr>
+    <td><img src="/website images/1.png" /></td>
+    <td><img src="/website images/2.png" alt="mockups" /></td>
+  </tr>
+  <tr>
+    <td><img src="/website images/3.png" /></td>
+  </tr>
+</table>
