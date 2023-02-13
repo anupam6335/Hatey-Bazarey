@@ -68,10 +68,10 @@ npm run seed
 
 <table>
   <tr>
-    <td><img src="/website images/1.png" /></td>
-    <td><img src="/website images/2.png" alt="mockups" /></td>
+    <td><img src="assets/1.png" /></td>
+    <td><img src="assets/2.png" alt="mockups" /></td>
   </tr>
   <tr>
-    <td><img src="/website images/3.png" /></td>
+    <td><img src="assets/3.png" /></td>
   </tr>
 </table>
