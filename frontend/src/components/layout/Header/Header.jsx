@@ -41,7 +41,8 @@ const Header = () => {
               <Link to="/cart" style={{ color: 'black'}}>
                 <div className="card">
                   <BiShoppingBag className="cardIcon" />
-                  <span className="flexCenter">{cartItems.length}</span>
+                  {cartItems.length === 0 ? '' : <span className="flexCenter">{cartItems.length}</span>}
+                  
                 </div>
               </Link>
               <User />
