@@ -27,7 +27,9 @@ const NewProduct = () => {
     "Headphones",
     "Food",
     "Books",
-    "Clothes/Shoes",
+    "MenClothes",
+    "WomenClothes",
+    "shoe",
     "Beauty/Health",
     "Sports",
     "Outdoor",
@@ -109,13 +111,13 @@ const NewProduct = () => {
               >
                 <h1 className="mb-4">New Product</h1>
 
-                <div className="form-group" style={{ textAlign: 'center'}}>
+                <div className="form-group" style={{ textAlign: "center" }}>
                   <label htmlFor="name_field">Name</label>
                   <input
                     type="text"
                     id="name_field"
                     className="form-control wrapper__admin_form__input"
-                    style={{ textAlign: 'center'}}  
+                    style={{ textAlign: "center" }}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
@@ -123,7 +125,7 @@ const NewProduct = () => {
 
                 <div
                   className="d-flex justify-content-between"
-                  style={{ gap: "20px", textAlign: 'center' }}
+                  style={{ gap: "20px", textAlign: "center" }}
                 >
                   <div className="form-group">
                     <label htmlFor="price_field">Price</label>
@@ -131,7 +133,7 @@ const NewProduct = () => {
                       type="text"
                       id="price_field"
                       className="form-control wrapper__admin_form__input"
-                      style={{ width: "30rem", textAlign: 'center' }}
+                      style={{ width: "30rem", textAlign: "center" }}
                       value={price}
                       onChange={(e) => setPrice(e.target.value)}
                     />
@@ -144,13 +146,13 @@ const NewProduct = () => {
                       id="stock_field"
                       className="form-control wrapper__admin_form__input"
                       value={stock}
-                      style={{ width: "30rem", textAlign: 'center' }}   
+                      style={{ width: "30rem", textAlign: "center" }}
                       onChange={(e) => setStock(e.target.value)}
                     />
                   </div>
                 </div>
 
-                <div className="form-group" style={{ textAlign: 'center'}}>
+                <div className="form-group" style={{ textAlign: "center" }}>
                   <label htmlFor="description_field">Description</label>
                   <textarea
                     className="form-control wrapper__admin_form__input"
@@ -162,14 +164,14 @@ const NewProduct = () => {
                 </div>
                 <div
                   className="d-flex justify-content-between"
-                  style={{ gap: "20px",  textAlign: 'center' }}
+                  style={{ gap: "20px", textAlign: "center" }}
                 >
                   <div className="form-group">
                     <label htmlFor="category_field">Category</label>
                     <select
                       className="form-control wrapper__admin_form__input"
                       id="category_field"
-                      style={{ width: "30rem", textAlign: 'center' }}   
+                      style={{ width: "30rem", textAlign: "center" }}
                       value={category}
                       onChange={(e) => setCategory(e.target.value)}
                     >
@@ -187,14 +189,14 @@ const NewProduct = () => {
                       type="text"
                       id="seller_field"
                       className="form-control wrapper__admin_form__input"
-                      style={{ width: "30rem", textAlign: 'center' }}   
+                      style={{ width: "30rem", textAlign: "center" }}
                       value={seller}
                       onChange={(e) => setSeller(e.target.value)}
                     />
                   </div>
                 </div>
 
-                <div className="form-group" style={{ textAlign: 'center'}}>
+                <div className="form-group" style={{ textAlign: "center" }}>
                   <label>Images</label>
 
                   <div className="custom-file">

@@ -26,7 +26,9 @@ const Shop = () => {
     "Headphones",
     "Food",
     "Books",
-    "Clothes/Shoes",
+    "MenClothes",
+    "WomenClothes",
+    "shoe",
     "Beauty/Health",
     "Sports",
     "Outdoor",
@@ -59,12 +61,13 @@ const Shop = () => {
   }
   return (
     <>
-    <MetaData title={'save money buy more'}/>
-    {loading ? (
+      <MetaData title={"save money buy more"} />
+      {loading ? (
         <Loader />
-      ) : (<div className="section__p1">
-      <div className="shop">
-        {/* <div className="shop__category">
+      ) : (
+        <div className="section__p1">
+          <div className="shop">
+            {/* <div className="shop__category">
           <h4 style={{ fontWeight: "bold", marginBottom: "20px" }}>Category</h4>
           <ul className="pl-0">
             {categories.map((category) => (
@@ -104,62 +107,61 @@ const Shop = () => {
             </ul>
           </div>
         </div> */}
-        <div className="shop__products">
-          <div className="shop__single product" id="shop__product_1">
-            <div className="shop__pro_container">
-              {products &&
-                products.map((product) => (
-                  
-                  <div className="shop__pro">
-                    <Link
-                      to={`/product/${product._id}`}
-                      style={{ textDecoration: "none" }}
-                    >
-                      <img src={product.images[0].url} alt="" />
-                      <div className="shop__des">
-                        <span>{product.seller}</span>
-                        <h5>{product.name}</h5>
-                        <div className="star ratings">
-                          <div className="rating-outer">
-                            <div
-                              className="rating-inner"
-                              style={{
-                                width: `${(product.ratings / 5) * 100}%`,
-                              }}
-                            ></div>
+            <div className="shop__products">
+              <div className="shop__single product" id="shop__product_1">
+                <div className="shop__pro_container">
+                  {products &&
+                    products.map((product) => (
+                      <div className="shop__pro">
+                        <Link
+                          to={`/product/${product._id}`}
+                          style={{ textDecoration: "none" }}
+                        >
+                          <img src={product.images[0].url} alt="" />
+                          <div className="shop__des">
+                            <span>{product.seller}</span>
+                            <h5>{product.name}</h5>
+                            <div className="star ratings">
+                              <div className="rating-outer">
+                                <div
+                                  className="rating-inner"
+                                  style={{
+                                    width: `${(product.ratings / 5) * 100}%`,
+                                  }}
+                                ></div>
+                              </div>
+                              <span id="no_of_reviews">
+                                ({product.numOfReviews} review)
+                              </span>
+                            </div>
+                            <h4>${product.price}</h4>
                           </div>
-                          <span id="no_of_reviews">
-                            ({product.numOfReviews} review)
-                          </span>
-                        </div>
-                        <h4>${product.price}</h4>
+                        </Link>
                       </div>
-                    </Link>
-                  </div>
-                ))}
+                    ))}
+                </div>
+              </div>
+
+              {resPerPage <= count && (
+                <div className="d-flex justify-content-center mt-5">
+                  <Pagination
+                    activePage={currentPage}
+                    itemsCountPerPage={resPerPage}
+                    totalItemsCount={productsCount}
+                    onChange={setCurrentPageNo}
+                    nextPageText={"Next"}
+                    prevPageText={"Prev"}
+                    firstPageText={"First"}
+                    lastPageText={"Last"}
+                    itemClass="page-item"
+                    linkClass="page-link"
+                  />
+                </div>
+              )}
             </div>
           </div>
-
-          {resPerPage <= count && (
-            <div className="d-flex justify-content-center mt-5">
-              <Pagination
-                activePage={currentPage}
-                itemsCountPerPage={resPerPage}
-                totalItemsCount={productsCount}
-                onChange={setCurrentPageNo}
-                nextPageText={"Next"}
-                prevPageText={"Prev"}
-                firstPageText={"First"}
-                lastPageText={"Last"}
-                itemClass="page-item"
-                linkClass="page-link"
-              />
-            </div>
-          )}
         </div>
-      </div>
-    </div>)}
-    
+      )}
     </>
   );
 };

@@ -33,7 +33,9 @@ const Home = () => {
     "Headphones",
     "Food",
     "Books",
-    "Clothes/Shoes",
+    "MenClothes",
+    "WomenClothes",
+    "shoe",
     "Beauty/Health",
     "Sports",
     "Outdoor",
@@ -125,12 +127,17 @@ const Home = () => {
               </div>
 
               <div id="product1" className="section__p1 view__product_search">
-                <h2 className="title_for_trending_and_search" style={{color: 'grey'}}>
-                  {keyword
-                    ? `${keyword.toLocaleUpperCase()}`
-                    : "Best sellers"}
+                <h2
+                  className="title_for_trending_and_search"
+                  style={{ color: "grey" }}
+                >
+                  {keyword ? `${keyword.toLocaleUpperCase()}` : "Best sellers"}
                 </h2>
-                <div to="/products" className="view__product view__product_1" style={{marginTop: '20px'}}>
+                <div
+                  to="/products"
+                  className="view__product view__product_1"
+                  style={{ marginTop: "20px" }}
+                >
                   <div className="pro__container">
                     {products &&
                       products.map((product) => (
@@ -142,14 +149,15 @@ const Home = () => {
             </div>
           ) : (
             <div id="product1" className="section__p1">
-              <h2 style={{color: 'grey'}}>
-                {keyword
-                  ? `${keyword.toLocaleUpperCase()}`
-                  : "Best sellers"}
+              <h2 style={{ color: "grey" }}>
+                {keyword ? `${keyword.toLocaleUpperCase()}` : "Best sellers"}
               </h2>
-              <p>
-              </p>
-              <div to="/products" className="view__product" style={{marginTop: '20px'}}>
+              <p></p>
+              <div
+                to="/products"
+                className="view__product"
+                style={{ marginTop: "20px" }}
+              >
                 <div className="pro__container">
                   {products &&
                     products.map((product) => (
@@ -159,7 +167,6 @@ const Home = () => {
               </div>
             </div>
           )}
-
 
           {resPerPage <= count && (
             <div className="d-flex justify-content-center mt-5">
@@ -178,7 +185,7 @@ const Home = () => {
             </div>
           )}
 
-          <Smallbanner/>
+          <Smallbanner />
         </>
       )}
     </>

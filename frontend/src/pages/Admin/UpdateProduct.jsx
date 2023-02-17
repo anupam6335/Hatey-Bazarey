@@ -33,7 +33,9 @@ const UpdateProduct = () => {
     "Headphones",
     "Food",
     "Books",
-    "Clothes/Shoes",
+    "MenClothes",
+    "WomenClothes",
+    "shoe",
     "Beauty/Health",
     "Sports",
     "Outdoor",
@@ -163,7 +165,7 @@ const UpdateProduct = () => {
                   />
                 </div>
 
-                <div className="form-group"  style={{ textAlign: 'center'}}>
+                <div className="form-group" style={{ textAlign: "center" }}>
                   <label htmlFor="price_field">Price</label>
                   <input
                     type="text"
@@ -175,7 +177,7 @@ const UpdateProduct = () => {
                   />
                 </div>
 
-                <div className="form-group"  style={{ textAlign: 'center'}}>
+                <div className="form-group" style={{ textAlign: "center" }}>
                   <label htmlFor="description_field">Description</label>
                   <textarea
                     className="form-control wrapper__admin_form__input"
@@ -187,7 +189,7 @@ const UpdateProduct = () => {
                   ></textarea>
                 </div>
 
-                <div className="form-group"  style={{ textAlign: 'center'}}>
+                <div className="form-group" style={{ textAlign: "center" }}>
                   <label htmlFor="category_field">Category</label>
                   <select
                     className="form-control wrapper__admin_form__input"
@@ -203,7 +205,7 @@ const UpdateProduct = () => {
                     ))}
                   </select>
                 </div>
-                <div className="form-group"  style={{ textAlign: 'center'}}>
+                <div className="form-group" style={{ textAlign: "center" }}>
                   <label htmlFor="stock_field">Stock</label>
                   <input
                     type="number"
@@ -215,7 +217,7 @@ const UpdateProduct = () => {
                   />
                 </div>
 
-                <div className="form-group"  style={{ textAlign: 'center'}}>
+                <div className="form-group" style={{ textAlign: "center" }}>
                   <label htmlFor="seller_field">Seller Name</label>
                   <input
                     type="text"
@@ -227,7 +229,7 @@ const UpdateProduct = () => {
                   />
                 </div>
 
-                <div className="form-group"  style={{ textAlign: 'center'}}>
+                <div className="form-group" style={{ textAlign: "center" }}>
                   <label>Images</label>
 
                   <div className="custom-file">
