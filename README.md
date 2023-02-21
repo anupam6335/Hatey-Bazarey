@@ -37,6 +37,7 @@ Full-Stack Ecommerce with Admin Dashboard & stripe Payment Gateway.
 
 ## 🚀 Features
 - custom title on each page
+- auto login
 - Login/Signup User Account
 - Update Profile/Password User Account
 - Reset Password Mail using Mailtrap
