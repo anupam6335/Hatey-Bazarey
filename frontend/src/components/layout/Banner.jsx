@@ -1,63 +1,113 @@
-import React from 'react'
+import React from "react";
 import { BiShoppingBag } from "react-icons/bi";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "../../pages/Home/Featureproduct.css";
 import "../../pages/Home/Home.css";
 const Banner = () => {
   return (
     <>
-        <section className="image__grid">
-            <div className="image__grid_col__2 image__grid_row__2 box">
-         
-              <h3 className="bose__text">
-                Bose QuietComfort <p>45</p>{" "}
-              </h3>
-              <p>
-                SOUNDS <br /> LIKE AN <br /> EPIPHANY.{" "}
-              </p>
+      <div className="container">
+        <div class="gallery">
+          <div style={{ position: "relative", cursor: "pointer" }}>
+            <Link to="/product/63e44c993b623af4c66b1862">
               <img
+                style={{ position: "absolute" }}
+                src="/assets/banner/HEROecom8.png"
+                alt=""
+                height="100%"
+                width="100%"
+              />
+            </Link>
+          </div>
+          <div style={{ position: "relative" }}>
+            <Link to={`/product/63e44c993b623af4c66b1858`}>
+              <img
+                style={{ position: "absolute" }}
                 src="https://res.cloudinary.com/hateybazarey/image/upload/v1674741172/products/headphone_with_girl_geyvtd.webp"
-                alt=" main banner"
+                alt=""
+                height="100%"
+                width="100%"
               />
-               <Link to={`/product/63e44c993b623af4c66b1858`} className='view__product_bose'>
-                <BiShoppingBag className="cardIcon"  />
-                {/* view product */}
-              </Link>
-            
-            </div>
-            <div className="boxs">
-              {/* <h3>Girls Hoodies</h3> */}
+            </Link>
+          </div>
+          <div style={{ position: "relative" }}>
+            <img
+              style={{ position: "absolute" }}
+              src="/assets/banner/HEROecom2.png"
+              alt=""
+              height="100%"
+              width="100%"
+            />
+          </div>
+          <div style={{ position: "relative" }}>
+            <Link to="/product/63e44c993b623af4c66b185a">
               <img
-                src="https://res.cloudinary.com/hateybazarey/image/upload/v1674744963/products/hoodie_girl_kxhlav.jpg"
-                alt=" main banner"
+                style={{ position: "absolute" }}
+                src="/assets/banner/HEROecom4.jpg"
+                alt=""
+                height="100%"
+                width="100%"
               />
-            </div>
-            
-            <div className="boxs">
-              {/* <h3 className="boys">Boys <br /> sweater</h3> */}
+            </Link>
+          </div>
+          <div style={{ position: "relative" }}>
+            <Link to="/product/63e44c993b623af4c66b1863">
               <img
-                src="https://res.cloudinary.com/hateybazarey/image/upload/v1674746307/products/boys_sweater_tv23fl.jpg"
-                alt=" main banner"
+                style={{ position: "absolute" }}
+                src="/assets/banner/HEROecom6.jpg"
+                alt=""
+                height="100%"
+                width="100%"
               />
-            </div>
+            </Link>
+          </div>
+          <div style={{ position: "relative" }}>
+            <Link to="/product/63f012bedd5088bb769cf309">
+              <img
+                style={{ position: "absolute" }}
+                src="/assets/banner/HEROecom5.png"
+                alt=""
+                height="100%"
+                width="100%"
+              />
+            </Link>
+          </div>
+          <div style={{ position: "relative" }}>
+            <img
+              style={{ position: "absolute" }}
+              src="/assets/banner/HEROecom.jpg"
+              alt=""
+              height="100%"
+              width="100%"
+            />
+          </div>
+          <div style={{ position: "relative" }}>
+            <Link to="/product/63e44c993b623af4c66b1856">
+              <img
+                style={{ position: "absolute" }}
+                src="/assets/banner/HEROecom10.png"
+                alt=""
+                height="100%"
+                width="100%"
+              />
+            </Link>
+          </div>
+          <div style={{ position: "relative" }}>
+            <Link to="/product/63f1ed8901836094cedc6cc8">
+              <img
+                style={{ position: "absolute" }}
+                src="/assets/banner/HEROecom7.png" // bat
+                alt=""
+                height="100%"
+                width="100%"
+              />
+            </Link>
+          </div>
+        </div>
+      </div>
 
-            <div className="boxs">
-              <img
-                src="https://res.cloudinary.com/hateybazarey/image/upload/v1674746870/products/phone_nehycw.jpg"
-                alt=" main banner"
-              />
-            </div>
-            <div className="boxs">
-              {/* <h3 className="phone">HB watchs</h3> */}
-              <p></p>
-              <img
-                src="https://res.cloudinary.com/hateybazarey/image/upload/v1674747888/products/watch_ujcdpg.webp"
-                alt=" main banner"
-              />
-            </div>
-          </section>
     </>
-  )
-}
+  );
+};
 
-export default Banner
+export default Banner;
