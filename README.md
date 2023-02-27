@@ -74,5 +74,6 @@ npm run seed
   </tr>
   <tr>
     <td><img src="https://user-images.githubusercontent.com/65649115/218567774-c4036d4c-12c6-400d-b278-c243b600c700.png" /></td>
+    <td><img src="https://user-images.githubusercontent.com/65649115/221517641-e93cf24f-9dda-4fe7-87fc-53054aeb17d2.png" /></td>
   </tr>
 </table>
